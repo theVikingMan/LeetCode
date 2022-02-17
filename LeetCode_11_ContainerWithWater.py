@@ -1,17 +1,14 @@
-
 def maxArea(height):
-    best = 0
-    l = 0
-    r = len(height) - 1
+  maxCombo = 0
+  l, r = 0, len(height) - 1
 
-    while l < r:
-        best = max(best, (min(height[l], height[r]) * (r - l)))
-        if height[l] < height[r]:
-            l += 1
-        else:
-            r -= 1
-    return best
+  while l < r:
+    currArea = min(height[l], height[r]) * (r - l)
+    maxCombo = max(maxCombo, currArea)
+    if height[l] < height[r]:
+      l += 1
+    else:
+      r -= 1
+  return maxCombo
 
-
-
-print(maxArea([1, 8, 6, 2, 5, 4, 3, 8, 7]))
+print(maxArea([2,3,10,5,7,8,9]))
