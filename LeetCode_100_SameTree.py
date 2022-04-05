@@ -4,47 +4,16 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
-class Solution:
+class Solution(object):
     def isSameTree(self, p, q):
-        
-        # p and q are both None
+      # Check if both are null first, meaning that everything else
+      # was the same up to that point
         if not p and not q:
             return True
-        
-        # one of p and q is None
-        if not q or not p:
+      # or works here bc it exposes one or the other is null given we
+      # checked prior that both might be null
+      # If order is switched, a end node for BOTH trees will set the False off
+        if (not p or not q) or (p.val != q.val):
             return False
-        
-        if p.val != q.val:
-            return False
-        
-        return self.isSameTree(p.right, q.right) and self.isSameTree(p.left, q.left)
-
-
-
-# Modified way from LeetCode_101
-'''
-class Solution:
-    def isSameTree(self, p, q):
-        if p is None and q is None:
-            return True
-        elif not p or not q:
-            return False
-        elif p.val != q.val:
-            return False
-        else:
-            return self.isMirror(p.left, q.left) and self.isMirror(q.right, p.right)
-
-    def isMirror(self, p_derv, q_derv):
-        if p_derv is None and q_derv is None:
-            return True
-        if p_derv is None or q_derv is None:
-            return False
-
-        if p_derv.val == q_derv.val:
-            outPair = self.isMirror(p_derv.left, q_derv.left)
-            inPiar = self.isMirror(p_derv.right, q_derv.right)
-            return outPair and inPiar
-        else:
-            return False
-'''
+        if p.val == q.val:
+            return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)

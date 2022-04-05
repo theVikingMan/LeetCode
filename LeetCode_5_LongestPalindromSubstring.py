@@ -1,23 +1,30 @@
 def longestPalindrome(s):
-  n = len(s)
+  res = ''
+  resLen = 0
 
-  def longestPal(l, r):
-    nonlocal maxLen, startIndex
-    while l-1 >= 0 and r+1 < n and s[l-1] == s[r+1]:
-      l -= 1
+  # loop over all the letter to see al the possible combinations
+  for i in range(len(s)):
+    # odd length
+    l, r = i, i
+    # while in bounds and a palendrom
+    while l >=0 and r < len(s) and (s[l] == s[r]):
+      if (r - l + 1) > resLen:
+        resLen = (r - l + 1)
+        res = s[l:r+1]
       r += 1
-    newLen = r-l+1
-    if newLen > maxLen:
-      maxLen = newLen
-      startIndex = l
+      l -= 1
 
-  maxLen = startIndex = 0
-  for i in range(n):
-    longestPal(i, i)
-    if i+1 < n and s[i] == s[i+1]:
-      longestPal(i, i+1)
+    # even length
+    l, r = i, i + 1
+    while l >=0 and r < len(s) and (s[l] == s[r]):
+      if (r - l + 1) > resLen:
+        resLen = (r - l + 1)
+        res = s[l:r+1]
+      r += 1
+      l -= 1
 
-  return s[startIndex: startIndex + maxLen]
-
+  return res
 
 print(longestPalindrome("cbc"))
+print(longestPalindrome("bbaaa"))
+print(longestPalindrome("abnba"))
