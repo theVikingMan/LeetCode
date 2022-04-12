@@ -21,6 +21,3 @@ class Solution(object):
             return False
         if (p and q) and (p.val == q.val):
             return (self.isSame(p.left, q.left) and self.isSame(p.right, q.right))
-
-
-        return (isSame(curr, subRoot))

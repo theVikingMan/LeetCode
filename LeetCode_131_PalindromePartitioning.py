@@ -11,7 +11,8 @@ def partition(s):
 
         # check all palindrome ranges almost like a sliding door
         for j in range(i, len(s)):
-            # call our palindrome helper function on each segment starting at just one letter
+            # call our palindrome helper function on each segment starting at
+            # just one letter
             if isPalindrome(s, i, j):
                 part.append(s[i:j+1])
                 dfs(j+1)

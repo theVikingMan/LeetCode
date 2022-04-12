@@ -1,9 +1,4 @@
 def canJump(nums):
-    # I - array of nums. num represents MAX steps can take
-    # O - boolean. If can reach len(nums) - 1
-    # C
-    # E - 0 resets. length of 1 array
-
     if len(nums) == 1:
         return True
 

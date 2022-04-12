@@ -10,7 +10,7 @@ def numIslands(grid):
 
     def dfs(r, c):
         # Base case: Check if we are out bounds
-        # OR that its water or that we have DFS'd on it before
+        # OR that its water OR that we have DFS'd on it before
         if (r < 0 or c < 0 or r >= ROWS or c >= COLS or
             grid[r][c] == "0" or (r, c) in visited):
             return
