@@ -20,6 +20,8 @@ def generateParenthesis(n):
     backtracking(0, 0, '')
     return result
 
+print(generateParenthesis(3))
+
 '''
 def generatePars(n):
     res = []
@@ -43,5 +45,3 @@ def generatePars(n):
     backtrack(0, 0)
     return res
 '''
-
-print(generateParenthesis(3))

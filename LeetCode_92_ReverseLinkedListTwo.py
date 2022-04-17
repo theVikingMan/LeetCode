@@ -13,7 +13,7 @@ class Solution:
         # the start of the nodes we will reverse (curr)
         left_prev, curr = dummy, head
         for _ in range(left - 1):
-            left_prev, curr = curr, curr.next
+            left_prev, curr =  curr, curr.next
 
         # Classic reverse linked list BUT for the range of nodes
         # in the range -> +1 because we need that end node that will not be modified

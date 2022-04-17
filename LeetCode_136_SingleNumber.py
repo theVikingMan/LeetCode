@@ -14,5 +14,5 @@ print(singleNumber([2,2,1]))
 # Bit manipulation
 	# res = 0
 	# for num in nums:
-	# 		res = num ^ res
+	# 		res ^= num
 	# return res
