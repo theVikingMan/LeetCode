@@ -32,4 +32,4 @@ def validTree(n, edges):
 
     return dfs(0, -1) and n == len(visited)
 
-print(validTree(5, [[0,1],[1,2],[2,3],[1,3],[1,4]]))
+print(validTree(5, [[0,1],[0,2],[0,3],[1,4]]))

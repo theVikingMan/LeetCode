@@ -1,5 +1,5 @@
 
-def rotate(self, matrix):
+def rotate(matrix):
     l, r = 0, len(matrix) - 1
 
     while l <= r:
