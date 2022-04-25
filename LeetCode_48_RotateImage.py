@@ -1,27 +1,28 @@
 
 def rotate(matrix):
-    l, r = 0, len(matrix) - 1
+    left, right = 0, len(matrix) - 1
 
-    while l <= r:
-        for i in range(r - l):
-            top, bottom = l, r
+    while left <= right:
+        for i in range(right - left):
+            top, bottom = left, right
 
-            # handle top left
-            topLeft = matrix[top][l + i]
+            # store the top-left value
+            topLeft = matrix[top][left + i]
 
-            # handle bottom-left -> top-right
-            matrix[top + i][l] = matrix[bottom][l + i]
+            # bottom-left -> top-left
+            matrix[top][left + i] = matrix[bottom - i][left]
 
-            # handle bottom-right -> bottom-left
-            matrix[bottom][l] = matrix[bottom][r]
+            # bottom-right -> bottom-left
+            matrix[bottom - i][left] = matrix[bottom][right - i]
 
-            # handle top-right -> bottom-right
-            matrix[bottom][r] = matrix[top][r]
+            # top-right -> bottom-left
+            matrix[bottom][right - i] = matrix[top + i][right]
 
-            # handle top-left -> top right
-            matrix[top][r] = topLeft
+            # top-left -> top-right
+            matrix[top + i][right] = topLeft
 
-        l += 1
-        r -= 1
+        left += 1
+        right -= 1
+    return matrix
 
 print(rotate([[1,2,3],[4,5,6],[7,8,9]]))

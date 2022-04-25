@@ -19,4 +19,4 @@ def coinChange(coins, amount):
     return dp[amount] if dp[amount] != amount + 1 else -1
 
 
-print(coinChange([1,2,3], 10))
+print(coinChange([1], 0))

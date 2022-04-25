@@ -1,4 +1,4 @@
-def threeSumClosest(self, nums, target):
+def threeSumClosest(nums, target):
     nums.sort()
     # variable for the distance from target
     distance = float('-inf')
