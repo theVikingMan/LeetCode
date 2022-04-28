@@ -1,9 +1,4 @@
 def generateAbbreviations(word):
-    # Constraints: 1. length of perm has to be the same length of word
-    #              2. No numbers letters by eachother
-    #                   a. Everytime a number is added, we need to add a letter
-    #              3. numbers need to repesent length of letters they are covering
-
     result = []
 
     def backtracking(count, curr, idx):
