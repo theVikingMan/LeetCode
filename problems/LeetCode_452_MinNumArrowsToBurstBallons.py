@@ -1,4 +1,6 @@
 def findMinArrowShots(points):
+    # Overall: Check if a new arrow is needed
+    # by if the same arrow wont hit the start of the next
     arrows = 1
     points.sort(key=lambda x:x[1])
     first_end = points[0][1]
