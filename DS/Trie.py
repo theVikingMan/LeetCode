@@ -8,7 +8,6 @@ class Trie(object):
     def __init__(self):
         self.root = TrieNode()
 
-
     def insert(self, word):
         cur = self.root
         for c in word:
@@ -17,10 +16,8 @@ class Trie(object):
             cur = cur.children[c]
         cur.endOfWord = True
 
-
     def search(self, word):
         cur = self.root
-
         for c in word:
             if c not in cur.children:
                 return False
@@ -30,14 +27,11 @@ class Trie(object):
 
     def startsWith(self, prefix):
         cur = self.root
-
         for c in prefix:
             if c not in cur.children:
                 return False
             cur = cur.children[c]
         return True
-
-
 
 # Your Trie object will be instantiated and called as such:
 word = 'apple'
