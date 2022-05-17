@@ -1,10 +1,9 @@
 def solution(s):
-  # create set to hold all the seen values in our window
-  seenSet = set()
+  seenSet = set() # create set to hold all the seen values in our window
   res = 0
   l = 0
-  # creates our right pointer
-  for r in range(len(s)):
+
+  for r in range(len(s)): # for loop creates our right pointer
     while s[r] in seenSet:
       seenSet.remove(s[l])
       l += 1

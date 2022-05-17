@@ -1,5 +1,6 @@
 import collections
 
+# Iteratively
 def orangesRotting(grid):
     q = collections.deque()
     time, fresh = 0, 0 # how much time has passed and how many fresh oranges we have
@@ -28,3 +29,33 @@ def orangesRotting(grid):
                 fresh -= 1
         time += 1
     return time if fresh == 0 else -1
+
+# Helper funciton used (think about what variables you are accessing with the iterations)
+def wallsAndGates(rooms):
+    ROWS, COLS = len(rooms), len(rooms[0])
+    g = collections.deque()
+    visit = set() # do not want to revist the same cell twice. If already visited, then it has the min dist to a gate
+
+    # helper function to avoid varbose amount of code
+    def addRoom(r, c):
+        if (r < 0 or c < 0 or r == ROWS or c == COLS or
+        (r, c) in visit or rooms[r][c] == -1): # in bounds, havent seen and are not barriers
+            return
+        visit.add((r,c))
+        g.append((r,c))
+
+    # find all the initial starting points which are the gates to run BFS
+    for r in range(ROWS):
+        for c in range(COLS):
+            if rooms[r][c] == 0:
+                g.append([r, c])
+                visit.add((r, c))
+    dist = 0
+    while g:
+        for _ in range(len(g)):
+            r, c = g.popleft()
+            rooms[r][c] = dist
+            addRoom(r + 1, c)
+            addRoom(r - 1, c)
+            addRoom(r, c - 1)
+            addRoom(r, c + 1)
