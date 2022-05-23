@@ -1,23 +1,16 @@
 def numIslands(grid):
-    # Base case: check if edge case that we are given nothing
-    if len(grid) < 1:
+    if len(grid) < 1: # Base case: check if edge case that we are given nothing
         return 0
-    # Set usual variables for grid problems
-    ROWS, COLS = len(grid), len(grid[0])
-    # visited set to check if we have already seen the island
-    # which we will add during our DFS
-    visited = set()
+
+    ROWS, COLS = len(grid), len(grid[0]) # dimensions of grid (usual set up for matrix problems)
+    visited = set() # check if we have already seen the island
 
     def dfs(r, c):
-        # Base case: Check if we are out bounds
-        # OR that its water OR that we have DFS'd on it before
         if (r < 0 or c < 0 or r >= ROWS or c >= COLS or
-            grid[r][c] == "0" or (r, c) in visited):
+            grid[r][c] == "0" or (r, c) in visited): # Base case: Check if we are out bounds OR water OR that we have run DFS before on it
             return
 
-        # say we have seen it which will be useful for checking DFS and
-        # if it is a new island
-        visited.add((r,c))
+        visited.add((r,c)) # Mark as seen. Helps not re-run DFS and not double count islands
         dfs(r + 1, c)
         dfs(r - 1, c)
         dfs(r, c + 1)
@@ -28,8 +21,7 @@ def numIslands(grid):
         for c in range(COLS):
             if grid[r][c] == "1" and (r,c) not in visited:
                 result += 1
-                dfs(r, c)
-
+                dfs(r, c) # We have the start of an island, DFS through it to mark all points that are apart of that 1 island
     return result
 
 print(numIslands([

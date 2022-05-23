@@ -1,32 +1,23 @@
 def threeSum(nums):
   res = []
-  nums.sort()
+  nums.sort() # must sort to use the 2-pointer strategy
 
-  # for-loop of our first num (a in this case)
-  for idx, a in enumerate(nums):
-    # initial check base case of if duplicate
-    if idx > 0 and a == nums[idx - 1]:
+  for idx, a in enumerate(nums): # for-loop of our first num (a in this case)
+    if idx > 0 and a == nums[idx - 1]: # check if duplicate
       continue
 
-    # 2 other pointers for the 2nd & 3rd digits
-    l, r = idx + 1, len(nums) - 1
-    while l < r:
-      # whats our current sum
-      threeSum = a + nums[l] + nums[r]
-      # we are over Zero -> move in the right pointer located at the
-      # larger numbers
-      if threeSum > 0:
+    l, r = idx + 1, len(nums) - 1 # 2 other pointers for the 2nd & 3rd digits
+    while l < r: # pointers cannot be the same num
+      threeSum = a + nums[l] + nums[r] # current 3 sum
+      if threeSum > 0: # we are over Zero aka target -> move in the right pointer located at the larger numbers
         r -= 1
-      # move left if under
-      elif threeSum < 0:
+      elif threeSum < 0: # move left if under 0, increasing curr 3 sum
         l += 1
       else:
-        # we have found an answer
-        res.append([a, nums[l], nums[r]])
-        # shift our left pointer to start a new journey
-        l += 1
-        # classic while loop to avoid duplicates
-        while nums[l] == nums[l - 1] and l < r:
+        res.append([a, nums[l], nums[r]]) # we have found one answer of possible many
+        l += 1 # shift our left pointer to start a new journey
+
+        while nums[l] == nums[l - 1] and l < r: # classic while loop to avoid duplicates with l pointer
           l += 1
   return res
 

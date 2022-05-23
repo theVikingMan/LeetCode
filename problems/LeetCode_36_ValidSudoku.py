@@ -12,11 +12,11 @@ def solution(board):
         continue
       if (num in rows[r] or
           num in cols[c] or
-          num in squares[(r // 3, c // 3)]):
+          num in squares[(r // 3, c // 3)]): # Invalid: num is already in row or column or in the same sub-square
           return False
-      rows[r].add(num)
-      cols[c].add(num)
-      squares[(r // 3, c // 3)].add(num)
+      rows[r].add(num) # mark it as seen and valid
+      cols[c].add(num) # mark it as seen and valid
+      squares[(r // 3, c // 3)].add(num) # mark it as seen and valid
   return True
 
 print(solution([["5","3",".",".","7",".",".",".","."],
