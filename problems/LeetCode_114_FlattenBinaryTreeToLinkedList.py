@@ -14,7 +14,7 @@ class Solution:
         leftTail = dfs(root.left)
         rightTail = dfs(root.right)
 
-        if leftTail: # flatten left sub-tree and then integrate into right side
+        if leftTail: # flatten left sub-tree and then insert into right side
           leftTail.right = root.right # take left base node, point to the right side
           root.right = root.left # point root to the new lefttail
           root.left = None # All left pointers should be None

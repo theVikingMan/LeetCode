@@ -3,20 +3,18 @@ def findMin(nums):
     l, r = 0, len(nums) - 1 # set up binary search pointers
 
     while l <= r:
-        if nums[l] < nums[r]: # if we have found a strictly increasing portion, l is min of that section
-            res = min (res, nums[l])
+        if nums[l] < nums[r]: # if we have found a strictly increasing portion, L is min of that section
+            res = min(res, nums[l])
             break
-
-        # Set up binary search portion
+        # Set up classic binary search portion
         m = (l + r) // 2
-        res = min(res, nums[m])
+        res = min(res, nums[m]) # constantly take min
 
         if nums[m] >= nums[l]: # If we are in the left portion (larger nums), move towards the
-                               # right portion (smaller nums)
-            l = m + 1
+            l = m + 1          # right portion (smaller nums)
         else:
-            r = m - 1 # m pointer is in the right portion so move it to see if there is more to the
-                      # right porition
+            r = m - 1 # m pointer is in the right portion (smaller nums), move it to see if there is more to the
+                      # smaller nums porition
 
     return res
 

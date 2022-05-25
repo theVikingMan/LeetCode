@@ -1,35 +1,26 @@
 def validTree(n, edges):
-    # input validation to see if there isnt a tree
-    if not n:
+    if not n: # input validation to see if there isnt a tree
         return True
 
-    # Create adjancy list, remember its undirected so
-        # both nodes are neighbors of eachother
-    adj = { i:[] for i in range(n)}
+    adj = { i:[] for i in range(n)} # Create 2-way adjancy list, remember its undirected (Not a DAG)
     for n1, n2 in edges:
         adj[n1].append(n2)
         adj[n2].append(n1)
 
-    # Create and find if there is a cycle
-    visited = set()
+    visited = set() # Create and find if there is a cycle
     def dfs(i, prev):
-        # have we seen the node before in our search -> cycle
-        if i in visited:
+        if i in visited: # have we seen the node before in our search -> cycle
             return False
 
-        # Mark that we have seen it before
-        visited.add(i)
+        visited.add(i) # Mark that we have seen it before
 
-        # search all the current node's neightbors
-        for j in adj[i]:
-            # check if it is one we are coming from
-            if j == prev:
+        for j in adj[i]: # search all the current node's neightbors
+            if j == prev: # check if it is one we are coming from
                 continue
-            # if our recursive call found a cycle
-            if not dfs(j, i):
+            if not dfs(j, i): # if our recursive call found a cycle
                 return False
         return True
 
-    return dfs(0, -1) and n == len(visited)
+    return dfs(0, -1) and n == len(visited) # all nodes should be connected aka visited through DFS
 
 print(validTree(5, [[0,1],[0,2],[0,3],[1,4]]))
