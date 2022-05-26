@@ -1,9 +1,4 @@
-def countSubstrings(self, s):
-    # I - string of letters
-    # O - number of substrings that a palindromes. single letters are valid
-    # C
-    # E - 1 length string
-
+def countSubstrings(s):
     count = 0
 
     for i in range(len(s)):
@@ -19,3 +14,6 @@ def countSubstrings(self, s):
             l -= 1
             r += 1
     return count
+
+print(countSubstrings("abc")) # Output: 3
+print(countSubstrings("aaa")) # Output: 6
