@@ -3,7 +3,7 @@ def totalFruits(fruits):
   start = max_fruits = 0
 
   for end in range(len(fruits)):
-    seen[fruits[end]] = end
+    seen[fruits[end]] = end # Furit Number, Idx
     if len(seen) > 2:
       min_idx = min(seen.values())
       start = min_idx + 1

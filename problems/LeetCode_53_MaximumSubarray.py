@@ -6,3 +6,6 @@ def max_array(nums):
     return max_subarray
 
 print(max_array([-2,1,-3,4,-1,2,1,-5,4]))
+
+# T: O(n) -> One pass on the array
+# S: O(1) -> We only ever keep to int variables
