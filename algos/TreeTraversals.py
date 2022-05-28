@@ -25,7 +25,7 @@ def preorderTraversal(self, root):
 
 # ------ In-Order ------ #
 
-def preorderTraversal(self, root):
+def inorderTraversal(self, root):
     output = []
     def dfs(node):
         if not node:

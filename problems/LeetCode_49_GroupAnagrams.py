@@ -12,3 +12,6 @@ def solution(strs):
   return res.values() # .values() outputs an array
 
 print(solution(["eat","tea","tan","ate","nat","bat"]))
+
+# T: O(N * M) -> number of words times number of letters
+# S: O(N) --> the output dictionary with the count array always constant at 26

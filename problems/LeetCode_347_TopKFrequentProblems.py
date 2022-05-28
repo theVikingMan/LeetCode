@@ -21,17 +21,17 @@ print(topKFrequents([1,1,1,2,2,3], 2))
 
 
 # ----------- Heap Solution ----------- #
-def topKFrequent(nums, k):
-    count = collections.Counter(nums)
-    heap = [[-cnt, num] for num, cnt in count.items()]
-    res = []
-    heapq.heapify(heap)
+# def topKFrequent(nums, k):
+#     count = collections.Counter(nums)
+#     heap = [[-cnt, num] for num, cnt in count.items()]
+#     res = []
+#     heapq.heapify(heap)
 
-    while k:
-        k -= 1
-        top = heapq.heappop(heap)
-        res.append(top[1])
+#     while k:
+#         k -= 1
+#         top = heapq.heappop(heap)
+#         res.append(top[1])
 
-    return res
+#     return res
 
-print(topKFrequent([1,1,1,2,2,2,3], 2))
+# print(topKFrequent([1,1,1,2,2,2,3], 2))

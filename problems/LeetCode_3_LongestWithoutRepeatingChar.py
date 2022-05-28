@@ -11,4 +11,4 @@ def solution(s):
     res = max(res, r - l + 1)
   return res
 
-print(solution('bbbb'))
+print(solution('bbbbaba'))

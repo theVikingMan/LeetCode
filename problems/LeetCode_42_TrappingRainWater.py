@@ -22,3 +22,6 @@ def trap(height):
     # which is why we add to the res once moved and the moving of the lower pointers will always
     # yield a viable answer
 print(trap([4,2,0,3,2,5]))
+
+# T: O(n)
+# S: O(1)
