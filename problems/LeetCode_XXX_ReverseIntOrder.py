@@ -7,4 +7,4 @@ def descending_order(num):
     return ans
 
 
-print(descending_order(42145))
+print(descending_order(-42145))
