@@ -7,7 +7,7 @@ def shortestPath(grid, k):
     return ROWS + COLS - 2
 
   target = (ROWS - 1, COLS - 1)
-  q = collections.deque([(0, (0, 0, k))])
+  q = collections.deque([(0, (0, 0, k))]) # step, (state)
   directions = [[1, 0], [-1, 0], [0, 1], [0, -1]]
   seen = set([(0, 0, k)])
 
@@ -29,7 +29,7 @@ def shortestPath(grid, k):
   return -1
 
 print(shortestPath([[0,0,0],[1,1,0],[0,0,0],[0,1,1],[0,0,0]], 1))
-# ----------- Recursive / Slow ----------- #
+# ----------- Recursive / Too Slow ----------- #
 
 # def shortestPath(grid, k):
 #   res = float('inf')
