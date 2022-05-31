@@ -3,7 +3,7 @@ import heapq
 
 def solution(tasks, n):
   count = collections.Counter(tasks) # Get the count of all the chars
-  maxHeap = [-cnt for cnt in count.values()] # Create max heap in Python since it auto min heaps
+  maxHeap = [-cnt for cnt in count.values()] # Create max heap
   heapq.heapify(maxHeap)
 
   time = 0
