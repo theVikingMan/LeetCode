@@ -1,19 +1,17 @@
 
 def findOrder(numCourses, prerequisites):
-        # construct shell of adj list
+      # Construct adj list
       adj = { i:[] for i in range(numCourses) }
-      # add the needed items to use the parent item
       for crs, pre in prerequisites:
         adj[crs].append(pre)
 
       visit = {}
       res = []
 
-      # create dfs for each node
-      def dfs(node):
-        if node in visit:
+      def dfs(node): # create dfs for each node
+        if node in visit: # Have we already analyzed it?
           return visit[node]
-        visit[node] = True
+        visit[node] = True # We are currently visiting it
         for nei in adj[node]:
           if dfs(nei):
             return True

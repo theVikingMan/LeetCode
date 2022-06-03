@@ -14,5 +14,6 @@ def searchInsert(nums, target):
             end = middle - 1
     return start
 
-
-print(searchInsert([1,3,5,6], 7))
+print(searchInsert([1,3,5,6], 0))
+# print(searchInsert([1,3,5,6], 7))
+# print(searchInsert([1,3,5,6], 5))
