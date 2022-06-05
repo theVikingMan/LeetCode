@@ -1,10 +1,11 @@
 import collections
 
+# --------------- Recursively --------------- #
+
 def maxDepth(root):
-    # base case if root is none -> see if its a max
-    if not root:
+    if not root: # leaf node, no depth added
         return 0
-    return 1 +  max(self.maxDepth(root.left), self.maxDepth(root.right))
+    return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right)) # +1 depth if node exists
 
 # --------------- Iteratively --------------- #
 
