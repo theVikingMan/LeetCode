@@ -6,7 +6,7 @@
 # Go through all the buckets in order and build the fully sorted array.
 
 def InsertionSort(bucket):
-    for i in range (1, len (bucket)):
+    for i in range (1, len(bucket)):
         var = bucket[i]
         j = i - 1
         while (j >= 0 and var < bucket[j]):
@@ -19,7 +19,7 @@ def BucketSort(arr):
     arrayLength = len(arr)
 
     size = max_val / arrayLength + 1 # calculate the size of each bucket
-    buckets_list= [[] for x in range(arrayLength + 1)]
+    buckets_list= [[] for _ in range(arrayLength + 1)]
 
     for i in range(arrayLength):
         j = int(arr[i] / size)
