@@ -30,7 +30,7 @@ def invertTree(root):
     while queue:
         node = queue.popleft()
         if node:
-            node.left, node.right = node.right, node.left
-            queue.append(node.left)
-            queue.append(node.right)
+            node.left, node.right = node.right, node.left # switch node pointers
+            queue.append(node.left) # add nodes to be evaulated
+            queue.append(node.right) # add nodes to be evaulated
     return root

@@ -41,6 +41,21 @@ def inorderTraversal(root):
     dfs(root)
     return output
 
+def inorderTraversal(root):
+  if not root:
+    return root
+  stack, res = [], []
+
+  while True:
+    while root:
+      stack.append(root)
+      root = root.left
+    if not stack:
+      return res
+    node = stack.pop()
+    res.append(node.val)
+    root = node.right
+
 # ------ Level-Order ------ #
 
 
