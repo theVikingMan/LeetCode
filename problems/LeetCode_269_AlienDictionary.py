@@ -30,4 +30,5 @@ def solution(words):
   res.reverse()
   return "".join(res)
 
-print(solution(["z","x","z"]))
+# print(solution(["z","x","z"]))
+print(solution(["wrt","wrf","er","ett","rftt"]))

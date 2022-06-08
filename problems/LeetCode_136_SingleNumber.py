@@ -1,3 +1,15 @@
+# -------------   Bit manipulation ------------- #
+
+def singleNumber(nums):
+    res = 0
+    for num in nums:
+        res ^= num
+    return res
+
+print(singleNumber([2,2,1]))
+
+#  ------------ Extra Space ------------ #
+
 def singleNumber(nums):
 	mapping = {}
 	for num in nums:
@@ -8,11 +20,3 @@ def singleNumber(nums):
 	for key in mapping:
 			if mapping[key] == 1:
 					return key
-
-print(singleNumber([2,2,1]))
-
-# Bit manipulation
-	# res = 0
-	# for num in nums:
-	# 		res ^= num
-	# return res
