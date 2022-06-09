@@ -1,3 +1,5 @@
+#  ---------------- Sliding Window -------------- #
+
 def characterReplacement(s, k):
     count = {}
     res = 0
@@ -8,7 +10,7 @@ def characterReplacement(s, k):
         # The length of the interval keeps increasing no matter what char
         # The count keeps track of what is IN our substring
         # The max count should OFFSET the growing length unless we
-          # encounter a non-max char but our interval keeps growing
+          # encounter a non-max char
         while (r - l + 1) - max(count.values()) > k:
             count[s[l]] -= 1
             l += 1
