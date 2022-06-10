@@ -1,19 +1,28 @@
+import collections
+
 def permute(nums):
-    result = []
+    subset = []
+    res = []
+    values = collections.defaultdict(int)
 
-    if (len(nums) == 1):
-        return [nums[:]]
+    for n in nums:
+        values[n] += 1
 
-    for i in range(len(nums)):
-        n = nums.pop(0)
-        perms = permute(nums)
+    def dfs():
+        if len(subset) == len(nums):
+            res.append(subset[::])
+            return
 
-        for perm in perms:
-            perm.append(n)
-        result.extend(perms)
-        nums.append(n)
+        for key in values:
+            if values[key] > 0:
+                subset.append(key)
+                values[key] -= 1
+                dfs()
 
-    return result
+                subset.pop()
+                values[key] += 1
+    dfs()
+    return res
 
 
 print(permute([1, 2, 3]))

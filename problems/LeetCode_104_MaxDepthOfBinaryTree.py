@@ -10,16 +10,14 @@ def maxDepth(root):
 # --------------- Iteratively --------------- #
 
 def maxDepth(root):
-  if not root:
-    return 0
-  q = collections.deque([root])
-  maxD = 0
-  while q:
-    maxD += 1
-    for _ in range(len(q)):
-      node = q.popleft()
-      if node.right:
-        q.append(node.right)
-      if node.left:
-        q.append(node.left)
-  return maxD
+    res = 0
+    q = collections.deque([root])
+
+    while q:
+      res += 1
+      for _ in range(len(q)):
+        node = q.popleft()
+        if node:
+          q.append(node.left)
+          q.append(node.right)
+    return res - 1

@@ -3,7 +3,7 @@ def threeSum(nums):
   nums.sort() # must sort to use the 2-pointer strategy
 
   for idx, a in enumerate(nums): # for-loop of our first num (a in this case)
-    if idx > 0 and a == nums[idx - 1]: # check if duplicate
+    if idx > 0 and a == nums[idx - 1]: # check if duplicate when not first char
       continue
 
     l, r = idx + 1, len(nums) - 1 # 2 other pointers for the 2nd & 3rd digits
@@ -22,3 +22,7 @@ def threeSum(nums):
   return res
 
 print(threeSum([-1,0,1,2,-1,-4]))
+
+# STRATEGY
+# 3 pointers. Using for loop for 1st, then 2 pointers for the last 2
+# Array must be sorted for this to work with 2 pointers

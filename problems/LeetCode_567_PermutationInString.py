@@ -2,13 +2,13 @@ def solution(s1, s2):
     if len(s1) > len(s2): return False
 
     s1Count, s2Count = [0] * 26, [0] * 26
-    for i in range(len(s1)):
+    for i in range(len(s1)): # Get the ASCH count for each string up to the length of s1
         s1Count[ord(s1[i]) - ord('a')] += 1
         s2Count[ord(s2[i]) - ord('a')] += 1
 
     matches = 0
     for i in range(26):
-        matches += (1 if s1Count[i] == s2Count[i] else 0)
+        matches += (1 if s1Count[i] == s2Count[i] else 0) # if any overlapping chars, even 0s
 
     l = 0
     for r in range(len(s1), len(s2)):

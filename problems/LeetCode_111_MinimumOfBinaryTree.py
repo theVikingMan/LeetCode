@@ -1,3 +1,21 @@
+
+# -------------- Recursive option A ----------- #
+
+def minDepth(root):
+  if not root:
+    return 0
+
+  def dfs(node):
+    if not node:
+      return float('inf')
+    if not node.left and not node.right:
+      return 1
+    return 1 + min(dfs(node.left), dfs(node.right))
+
+  return dfs(root)
+
+# -------------- Recursive option B ----------- #
+
 def minDepth(self, root):
     def recurse(root):
         if root.left and root.right:

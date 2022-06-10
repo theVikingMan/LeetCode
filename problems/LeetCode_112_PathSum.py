@@ -4,7 +4,7 @@ import collections
 # T: O(n) -> Have to look at possibly all node
 # S: O(n) worst case if unbalanced tree, O(log(n)) best case if balanced
 
-# ------------------- Recursively ------------------- #
+# ------------------- Recursively (DFS) ------------------- #
 
 def hasPathSum(root, sum):
     if not root:  # Base case that null is initially given

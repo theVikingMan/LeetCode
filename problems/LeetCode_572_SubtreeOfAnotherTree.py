@@ -1,17 +1,13 @@
 class Solution(object):
     def isSubtree(self, root, subRoot):
-        # a root tree can possess a nothing tree
-        if not subRoot:
+        if not subRoot: # a root tree can possess a nothing tree
             return True
-        # BUT a nothing root tree does NOT possess another whole tree
-        if not root:
+        if not root: # BUT a nothing root tree does NOT possess another whole tree
             return False
-
-        # check initial root given
         if self.isSame(root, subRoot):
             return True
 
-        # No we can check the left and right
+        # Now we can check the left and right
         return (self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot))
 
     def isSame(self, p, q):
