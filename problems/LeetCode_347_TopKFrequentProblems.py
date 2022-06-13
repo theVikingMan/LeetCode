@@ -3,7 +3,7 @@ import collections, heapq
 # ----------- Bucket Sort Solution ----------- #
 def topKFrequents(nums, k):
     count = {} # count occurances of numbers
-    freq = [[] for i in range(len(nums) + 1)]
+    freq = [[] for _ in range(len(nums) + 1)]
 
     for n in nums: # for loop to count all item occurances
         count[n] = 1 + count.get(n, 0)
