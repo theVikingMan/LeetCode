@@ -1,14 +1,19 @@
 
 def solution(nums, k):
-    n, k, j = len(nums), k % len(nums), 0
-    while n > 0 and k % n != 0:
-        for i in range(0, k):
-            # swap
-            nums[j + i], nums[len(nums) - k +
-                              i] = nums[len(nums) - k + i], nums[j + i]
-        n, j = n - k, j + k
-        k = k % n
-    return nums
+  n = len(nums)
+
+  start, count = 0, 0 # start will point to beginning of a cycle, count is num times rotated
+  while count < n: # Need to rotate one full length through
+    curr, prev = start, nums[start] # curr calcs next idx and if we need to alter rotataion in even length arr
+    while True:
+      nxt_idx = (curr + k) % n # calculate rotated place of current num
+      nums[nxt_idx], prev = prev, nums[nxt_idx] # grab the next num and replace with the one we just picked up
+      curr = nxt_idx # move forward
+      count += 1 # mark that we have made one alteration
+      if curr == start: # if we have made it back without changing the whole array (even)
+        break
+    start += 1 # start cycle on the next set
+  return nums
 
 
 print(solution([5, 6, 7, 1], 5))
