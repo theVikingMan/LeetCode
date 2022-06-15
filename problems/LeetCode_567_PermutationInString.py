@@ -9,7 +9,7 @@ def solution(s1, s2):
     matches = 0
     for i in range(26):
         matches += (1 if s1Count[i] == s2Count[i] else 0) # if any overlapping chars, even 0s
-
+        # this DOES NOT take care of ordering, just count of chars
     l = 0
     for r in range(len(s1), len(s2)):
         if matches == 26: return True
@@ -31,3 +31,28 @@ def solution(s1, s2):
     return matches == 26
 
 print(solution("ab","eidbaooo"))
+
+
+# -------------- Sub optimal (26 * n) -------------- #
+# def solution(s1, s2):
+# if len(s1) > len(s2):
+#   return False
+
+# count1 = {}
+# count2 = {}
+
+# for c in s1:
+#   count1[c] = 1 + count1.get(c, 0)
+
+# l = 0
+# for r in range(len(s2)):
+#   if count1 == count2:
+#     return True
+#   count2[s2[r]] = 1 + count2.get(s2[r], 0)
+#   while l < r and (r - l + 1) > len(s1):
+#     count2[s2[l]] -= 1
+#     if count2[s2[l]] == 0:
+#       del count2[s2[l]]
+#     l += 1
+
+# return False if count1 != count2 else True
