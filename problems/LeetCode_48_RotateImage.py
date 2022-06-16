@@ -4,7 +4,7 @@ def rotate(matrix):
 
     while left <= right:
         for i in range(right - left):
-            top, bottom = left, right
+            top, bottom = left, right # n x n matrix
 
             # store the top-left value
             topLeft = matrix[top][left + i]

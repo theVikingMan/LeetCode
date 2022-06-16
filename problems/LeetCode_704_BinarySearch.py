@@ -1,18 +1,19 @@
+# -------------- Clean with Helper function -------------- #
 
+class Solution:
+  def search(self, nums, target):
+      self.nums, self.target = nums, target
+      return self.helper(0, len(nums)-1)
 
-def search(nums, target):
-    self.nums, self.target = nums, target
-    return self.helper(0, len(nums)-1)
+  def helper(self, low, high):
+      if low > high: return -1
+      mid = (high + low) // 2
 
-def helper(self, low: int, high: int) -> int:
-    if low > high: return -1
-    mid = (high + low) // 2
-    
-    if self.target == self.nums[mid]: return mid
-    elif self.target < self.nums[mid]: return self.helper(low, mid-1)
-    else: return self.helper(mid+1, high)
+      if self.target == self.nums[mid]: return mid
+      elif self.target < self.nums[mid]: return self.helper(low, mid-1)
+      else: return self.helper(mid+1, high)
 
-
+# -------------- Classic implementation -------------- #
 
 def search(nums, target):
     left, right = 0, len(nums) - 1
