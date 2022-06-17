@@ -2,7 +2,6 @@ def solve(board):
     ROWS, COLS = len(board), len(board[0])
 
     # 1. Capture unsurrounded regions (0 -> T)
-        # DFS
     def capture(r, c):
         if (r < 0 or c < 0 or r == ROWS or
             c == COLS or board[r][c] != "O"):
@@ -20,7 +19,6 @@ def solve(board):
                 capture(r, c)
 
     # 2. Capture surrounded regions (O -> X)
-        # Can Double for-loop
     for r in range(ROWS):
         for c in range(COLS):
             if board[r][c] == "O":
