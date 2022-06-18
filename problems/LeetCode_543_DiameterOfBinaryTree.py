@@ -6,12 +6,12 @@
 #         self.right = right
 class Solution(object):
     def diameterOfBinaryTree(self, root):
-        self.diameter = 0
-        self.dfs(root)
+        self.diameter = 0 # global var to continuously track maxs
+        self.dfs(root) # call helper on root node to traverse both sides
         return self.diameter
 
     def dfs(self, node):
-        if not node:
+        if not node: # reached the end == base case
             return 0
         left_side = self.dfs(node.left)
         right_side = self.dfs(node.right)

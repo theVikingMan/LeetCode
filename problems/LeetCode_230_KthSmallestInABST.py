@@ -6,8 +6,7 @@ class TreeNode(object):
         self.left = left
         self.right = right
 
-
-def kthSmallest(self, root, k):
+def kthSmallest(root, k):
     stack = [] # start off with empty stack. Stack is another way to DFS
     curr = root
     n = 0

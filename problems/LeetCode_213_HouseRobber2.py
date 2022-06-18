@@ -10,6 +10,7 @@ def rob(nums):
           before = temp
       return after
 
+    # either rob the 1st house and not the last OR the last and not the firsts
     return max(helper(nums[0:len(nums)-1]), helper(nums[1:]))
 
 print(rob([1,2,1,1]))

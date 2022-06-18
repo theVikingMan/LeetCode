@@ -8,7 +8,6 @@ class LRUCache(object):
     def __init__(self, capacity):
         self.cap = capacity # keep track of how many nodes we can have and when we are over
         self.cache = {} # map key to node (pointers to nodes)
-
         self.left, self.right = Node(0, 0), Node(0, 0) # Node pointers to track LRU and MRU
         self.left.next, self.right.prev = self.right, self.left # point to the opposite pointers
 
@@ -39,8 +38,7 @@ class LRUCache(object):
       self.cache[key] = Node(key, value)
       self.insert(self.cache[key])
 
-      if len(self.cache) > self.cap:
-        # remove from the linked list and delete the LRU from the hashmap
+      if len(self.cache) > self.cap:  # remove from the linked list and delete the LRU from the hashmap
         lru = self.left.next
         self.remove(lru)
         del self.cache[lru.key]
