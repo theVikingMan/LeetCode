@@ -1,5 +1,4 @@
 def wordBreak(s, wordDict):
-
     # Initialize each state to False as that is there base state
     dp = [False] * (len(s) + 1)
     #
@@ -20,5 +19,27 @@ def wordBreak(s, wordDict):
 
     return dp[0]
 
-
 print(wordBreak("leetcode", ["leet","code"]))
+
+# -------------- Recursion with memoization ----------- #
+
+# def wordBreak(s, wordDict):
+#     wDict = set(wordDict)
+#     memo = {}
+#     def dfs(sMod):
+#       if sMod == "":
+#         return True
+#       if sMod in memo:
+#         return memo[sMod]
+
+#       for w in wordDict:
+#         wLen = len(w)
+#         if wLen <= len(sMod) and sMod[:wLen] in wDict:
+#           if dfs(sMod[wLen:]):
+#             memo[sMod] = True
+#             return memo[sMod]
+#       memo[sMod] = False
+#       return memo[sMod]
+
+#     dfs(s)
+#     return memo[s]
