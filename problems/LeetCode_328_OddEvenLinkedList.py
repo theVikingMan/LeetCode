@@ -7,7 +7,7 @@ class Solution:
     def oddEvenList(self, head):
         if not head:
             return head
-        odd, even = head, head.next
+        odd, even = head, head.next # [1, 2, 3, 4, 5]
         firstEven = head.next
         dummy = ListNode()
         dummy.next = head

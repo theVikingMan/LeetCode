@@ -13,7 +13,7 @@ def minimumTime(n, relations, time):
     if node in visit:
       return visit[node] # if we have already looked at a nodes path, return max time for that path
     visit[node] = -1 # mark as visited currently in this particular cycle
-    t = time[node - 1] # curr time is the curr node's time
+    t = time[node - 1] # curr time is the curr node's time. node - 1 bc input is 0-indexed
     for pre in adj[node]: # traverse every child to get the max time for each child's DFS path
       otherTime = dfs(pre) # return value will be time for each child
       if t == -1: # if we have already seen it in the cycle, return -1 that means invalid answer

@@ -23,3 +23,4 @@ def maxProfit(prices):
   return dfs(0, True)
 
 print(maxProfit([1,2,3,0,2]))
+print(maxProfit([3, 4, 2, 6, 2, 4, 6]))

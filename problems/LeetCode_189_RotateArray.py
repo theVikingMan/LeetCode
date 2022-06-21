@@ -3,7 +3,7 @@ def solution(nums, k):
   n = len(nums)
 
   start, count = 0, 0 # start will point to beginning of a cycle, count is num times rotated
-  while count < n: # Need to rotate one full length through
+  while count < n: # Need to rotate one full length of the arr
     curr, prev = start, nums[start] # curr calcs next idx and if we need to alter rotataion in even length arr
     while True:
       nxt_idx = (curr + k) % n # calculate rotated place of current num
@@ -15,6 +15,4 @@ def solution(nums, k):
     start += 1 # start cycle on the next set
   return nums
 
-
 print(solution([5, 6, 7, 1], 5))
-# [5,6,7,1,2,3,4]
