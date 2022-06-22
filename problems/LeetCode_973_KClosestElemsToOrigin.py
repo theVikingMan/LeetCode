@@ -4,7 +4,7 @@ def kClosest(points, k):
     minHeap = []
     res = []
     for x, y in points: # generate distances for each coord
-        dis = distance(x, y)
+        dis =  distance(x, y)
         minHeap.append([dis, x, y])
     heapq.heapify(minHeap) # heapify based on calc (python is default inHeap)
 
