@@ -4,12 +4,13 @@ def solution(grid1, grid2):
 
   def dfs(r, c):
     if (r < 0 or c < 0 or r == ROWS or c == COLS or grid2[r][c] == 0 or (r, c) in visit):
-      return True # Base cases that we are in bounds. BUT not saying that its invalid, just end of current grid2 island
+      return True # Base cases that we are in bounds. BUT not saying that its invalid,
+                  # just end of current grid2 island
 
     res = True
     visit.add((r, c))
 
-    if grid1[r][c] == 0: # the initial base case is not excuted if grid 2 is an island. This checke
+    if grid1[r][c] == 0: # the initial base case is not excuted if grid 2 is an island
       res = False
 
     # Checking if the current grid2 island is a subisland. Not too many 1s in grid2

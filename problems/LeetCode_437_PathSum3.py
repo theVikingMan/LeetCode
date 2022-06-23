@@ -2,7 +2,7 @@
 def pathSum(root, targetSum):
     if not root: # check edge case of nothing given
       return 0
-    count = [0] # array to access in DFS. Result variable
+    count = [0] # array with one value to access in DFS. Result variable
     prefixSums = { 0 : 1 } # track with prefix sums seen and num of times
 
     def dfs(node, currTotal):
@@ -18,6 +18,7 @@ def pathSum(root, targetSum):
       if node.right:
         dfs(node.right, currTotal + node.right.val)
       prefixSums[currTotal] -= 1 # clean up so one side doesnt count the other
+                                 # think about a leaf node on the left side, no right so we clean up
 
     dfs(root, root.val)
     return count[0]
