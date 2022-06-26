@@ -3,8 +3,7 @@ def exist(board, word):
     path = set()
 
     def dfs(r, c, i):
-        # check if we have the word
-        if i == len(word):
+        if i == len(word): # check if we have the word
             return True
 
         #check if the word that we are building is invalid
@@ -13,18 +12,16 @@ def exist(board, word):
         (r, c) in path):
             return False
 
-        # letter is in our array, track it
-        path.add((r, c))
+        path.add((r, c)) # Mark letter is in our path
 
-        # run
+        # check all directions
         res = (dfs(r + 1, c, i + 1) or
             dfs(r - 1, c, i + 1) or
             dfs(r, c + 1, i + 1) or
             dfs(r, c - 1, i + 1))
-
         path.remove((r, c))
-
         return res
+
     for r in range(ROWS):
         for c in range(COLS):
             if dfs(r, c, 0):

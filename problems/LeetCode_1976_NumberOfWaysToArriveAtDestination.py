@@ -1,5 +1,6 @@
 from collections import defaultdict
 from heapq import *
+
 def countPaths(n, roads):
       # create adjacency list
       adj_list = defaultdict(list)
@@ -17,7 +18,6 @@ def countPaths(n, roads):
 
       # Heap nodes in the format (elapsed time to get to that node, node index)
       # This is done so as to allow the heap to pop node with lowest time first
-      # Push first node to heap.
       heap = [(0, start)]
       while heap:
           elapsed_time, node = heappop(heap)
