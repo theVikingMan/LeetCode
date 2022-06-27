@@ -7,7 +7,7 @@ def selectionSort(arr):
     arr[i], arr[curMinIdx] = arr[curMinIdx], arr[i]
   return arr
 
-print(selectionSort([5,1,3,6,10,44,2,1]))
+print(selectionSort([5,1,3,6]))
 
 # T: O(n^2)
 # S: O(1)

@@ -6,9 +6,7 @@ class Solution(object):
             return False
         if self.isSame(root, subRoot):
             return True
-
-        # Now we can check the left and right
-        return (self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot))
+        return (self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot)) # check the left and right
 
     def isSame(self, p, q):
         if not p and not q:
