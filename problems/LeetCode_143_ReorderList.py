@@ -4,19 +4,16 @@
 #         self.val = val
 #         self.next = next
 class Solution:
-    def reorderList(self, head: Optional[ListNode]) -> None:
-        """
-        Do not return anything, modify head in-place instead.
-        """
+    def reorderList(self, head):
         slow, fast = head, head.next
         while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
 
-        second = slow.next
-        slow.next = prev = None
+        second = slow.next # second half linked list
+        slow.next = prev = None # break first LL from second
 
-        while second:
+        while second: # reverse 2nd LL
             after = second.next
             second.next = prev
             prev = second

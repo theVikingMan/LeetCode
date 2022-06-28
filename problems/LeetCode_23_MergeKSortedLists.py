@@ -61,3 +61,6 @@ class Solution:
 #           dummy = dummy.next
 
 #         return res.next
+
+# T: O(N * log(k)) --> k is number of linked lists
+# S: O(k)

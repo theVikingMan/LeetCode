@@ -15,8 +15,8 @@ class Solution:
 
       leftMax = dfs(node.left) # get left max possibilities WITHOUT SPLITTING
       rightMax = dfs(node.right) # get right max possibilities WITHOUT SPLITTING
-      leftMax = max(leftMax, 0) # 0 is if we dont want to include childrent
-      rightMax = max(rightMax, 0) # 0 is if we dont want to include childrent
+      leftMax = max(leftMax, 0) # 0 -> dont want to include children (0 means nothing is added)
+      rightMax = max(rightMax, 0) #  0 -> dont want to include children (0 means nothing is added)
 
       # possible result if we split. Splitting means no inclusion of parent vals
       res[0] = max(res[0], node.val + leftMax + rightMax)
@@ -24,3 +24,6 @@ class Solution:
       return node.val + max(leftMax, rightMax)
 
     return max(dfs(root), res[0])
+
+# T: O(n) -> will need to check all nodes at most twice
+# S: O(H) -> height of the tree for the call stack, O(log(n)) if balanced so best case

@@ -2,9 +2,6 @@
 # T: worst case: O(n^2); best case: O(nlog(n)); average: O(nlog(n))
 # S: O(log(n)) -> implemented recursively, n is size of call stack
 
-from turtle import right
-
-
 def quickSort(array):
   quickSortHelper(array, 0, len(array) - 1)
   return array
@@ -15,6 +12,7 @@ def quickSortHelper(array, startIdx, endIdx):
   pivotIdx = startIdx
   leftIdx, rightIdx = startIdx + 1, endIdx
   while rightIdx >= leftIdx:
+    # if each pointer element is in its wrong place, swap
     if array[leftIdx] > array[pivotIdx] and array[rightIdx] < array[pivotIdx]:
       swap(leftIdx, rightIdx, array)
     if array[leftIdx] <= array[pivotIdx]:
@@ -33,3 +31,5 @@ def quickSortHelper(array, startIdx, endIdx):
 
 def swap(i, j, array):
   array[i], array[j] = array[j], array[i]
+
+print(quickSort([1,4,2,7,5,4,2,9,1]))
