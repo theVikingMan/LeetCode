@@ -1,15 +1,14 @@
 class Solution:
   def reverseWords(self, s):
     l, r = 0, len(s) - 1
-    " ".join(s)
 
-    while l < r:
+    while l < r: # reverse the sequence of words
       s[l], s[r] = s[r], s[l]
       l += 1
       r -= 1
 
     start = 0
-    while start < len(s) - 1:
+    while start < len(s) - 1: # find the edge of each word and reverse them
       fast = start + 1
       while fast < len(s) and s[fast] != " ":
         fast += 1

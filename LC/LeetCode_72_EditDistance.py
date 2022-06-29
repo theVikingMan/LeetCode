@@ -11,9 +11,9 @@ def minDistance(word1, word2):
       dp[(i, j)] = helper(i+1, j+1)
     else:
       dp[(i, j)] = 1 + min(
-        helper(i+1, j+1),
-        helper(i, j+1),
-        helper(i+1, j))
+        helper(i+1, j+1), # replace letter
+        helper(i, j+1), # insert letter
+        helper(i+1, j)) # delete letter
 
     return dp[(i, j)]
 

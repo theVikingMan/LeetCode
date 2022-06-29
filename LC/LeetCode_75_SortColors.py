@@ -13,7 +13,7 @@ def sortColors(nums):
         else: # We found a 1, no alterations to make
             curr += 1
 
-print([2,0,2,1,1,0])
+print(sortColors([0,2,2,1,1,0]))
 
 # Time: O(n)
 # Space: O(1)
