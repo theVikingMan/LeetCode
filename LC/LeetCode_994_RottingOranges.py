@@ -23,7 +23,7 @@ def solution(grid):
           row == ROWS or col == COLS or
           grid[row][col] != 1):
           continue
-        grid[row][col] = 2 # marking current fresh orange to rotten
+        grid[row][col] = 2 # marking current fresh orange to rotten / Similar to visit set()
         q.append([row, col]) # making a part of the rotton oranges to explore
         fresh -= 1 # mark one less fresh and that we are closer to 0
     time += 1 # mark that we have done one whole BFS with the current level in the queue

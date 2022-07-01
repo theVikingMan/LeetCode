@@ -1,5 +1,5 @@
 def fourSum(nums, target):
-    nums.sort() # Must sort to eliminate duplicates
+    nums.sort() # Must sort to eliminate duplicates and able to use 2-pointer
     res, quad = [], [] # For the recursive solution
 
     # k: how many values we need to make target, start: starting idx
@@ -10,7 +10,7 @@ def fourSum(nums, target):
                     continue
                 quad.append(nums[i]) # update the quad for the new potential num in nums
                 kSum(k - 1, i + 1, target - nums[i]) # Simulates as many for-loops as we need with recursion
-                quad.pop() # clean up call
+                quad.pop() # clean up call given quad is the only external variable manipulated
             return
         # ----- Two Sum II ---- #
         l, r = start, len(nums) - 1
