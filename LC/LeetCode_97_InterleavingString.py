@@ -30,7 +30,7 @@ print(isInterleave("aac", "dba", "aadbca"))
 
     #   outcome = False
     #   if i < len(s1) and s1[i]  == s3[s3Idx]:
-    #     outcome = outcome or helper(i+1, j)
+    #     outcome = helper(i+1, j)
     #   if j < len(s2) and s2[j] == s3[s3Idx]:
     #     outcome = outcome or helper(i, j+1)
 

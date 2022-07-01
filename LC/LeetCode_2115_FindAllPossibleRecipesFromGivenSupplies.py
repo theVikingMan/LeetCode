@@ -11,11 +11,11 @@ def solution(recipes, ingredients, supplies):
 
   completed = [] # to solve one recipe built on another
 
-  while supplies:
-    oneIng = supplies.pop() # Analyze the first ingredient
+  while supplies: # supplies will act as a stack
+    oneIng = supplies.pop() # Analyze an ingredient
     for component in adjList[oneIng]: # for every recipe that the ingrident can make
       inDegress[component] -= 1 # mark that we have one less ingredient to worry about
-      if inDegress[component] == 0: # if we have found a recipes that has all ingreidents
+      if inDegress[component] == 0: # if we have found a recipe that has all ingreidents
         completed.append(component) # Keeps track of completed recipes
         supplies.append(component) # if a recipe is complete its now a supplies
   return completed

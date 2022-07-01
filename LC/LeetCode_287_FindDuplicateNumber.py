@@ -15,4 +15,7 @@ def findDuplicate(nums):
         if slow == slow2:
             return slow
 
+# T: O(n)
+# S: O(1)
+
 print(findDuplicate([1,3,4,2,2]))

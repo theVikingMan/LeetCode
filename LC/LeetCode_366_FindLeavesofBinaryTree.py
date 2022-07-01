@@ -18,7 +18,7 @@ class Solution(object):
           return None # mark it as none which will turn the children of parent into Nones
         node.left = bfs(node.left) # if a leaf was to left, it will now be None
         node.right = bfs(node.right) # allowing for the next level appending to happen
-        return node # return back the node to the original tree
+        return node # return back the node to the original tree with leafs prunned
       while root: # while there are still leafs to look at
         res.append([]) # append for new round of leafs
         root = bfs(root) # send tree back through to harvest leafs

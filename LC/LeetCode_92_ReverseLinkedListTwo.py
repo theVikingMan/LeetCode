@@ -4,7 +4,7 @@
 #         self.val = val
 #         self.next = next
 class Solution:
-    def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
+    def reverseBetween(self, head, left, right):
         # Create dummy variables to return at the end the modified list
         dummy = ListNode(0)
         dummy.next = head
@@ -29,5 +29,7 @@ class Solution:
         left_prev.next.next = curr
         # set the initial left node now to the end of the desired range
         left_prev.next = prev
-
         return dummy.next
+
+# T: O(n) -> n is number of nodes in LL
+# S: O(1) -> in-place modification
