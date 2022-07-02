@@ -1,6 +1,6 @@
 
 def minimumTime(n, relations, time):
-  # STEP 1: Create adjceny list
+  # STEP 1: Create adjceny list -> DAG
   adj = { i:[] for i in range(1, n + 1) }
   for pre, after in relations:
     adj[after].append(pre)

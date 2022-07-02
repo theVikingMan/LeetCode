@@ -4,7 +4,6 @@ class TrieNode:
         self.endOfWord = False
 
 class Trie(object):
-
     def __init__(self):
         self.root = TrieNode()
 

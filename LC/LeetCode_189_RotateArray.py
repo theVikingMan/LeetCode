@@ -12,7 +12,7 @@ def solution(nums, k):
       count += 1 # mark that we have made one alteration
       if curr == start: # if we have made it back without changing the whole array (even)
         break
-    start += 1 # start cycle on the next set
+    start += 1 # if even length, start cycle on the next set
   return nums
 
 print(solution([5, 6, 7, 1], 5))

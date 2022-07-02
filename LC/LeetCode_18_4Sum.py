@@ -3,7 +3,7 @@ def fourSum(nums, target):
     res, quad = [], [] # For the recursive solution
 
     # k: how many values we need to make target, start: starting idx
-    def kSum(k, start, target): # passing target bc it will be changing
+    def kSum(k, start, target): # passing start and target bc it will be changing
         if k != 2: # if we have not hit the two situation aka just 2 numbers to find that are sorted
             for i in range(start, len(nums) - k + 1): # loop over the array except the remaining amount of vals
                 if i > start and nums[i] == nums[i - 1]: # Avoids duplicates in the recursive calls

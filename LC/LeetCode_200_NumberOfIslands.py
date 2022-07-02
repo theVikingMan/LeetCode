@@ -1,3 +1,5 @@
+import collections
+
 def numIslands(grid):
     if len(grid) < 1: # Base case: check if edge case that we are given nothing
         return 0
@@ -30,3 +32,28 @@ print(numIslands([
   ["0","0","1","0","0"],
   ["0","0","0","1","1"]
 ]))
+
+
+# ------------ BFS ------------ #
+
+def numIslands(grid):
+  ROWS, COLS = len(grid), len(grid[0])
+  res = 0
+
+  def helper(i, j):
+    q = collections.deque([(i,j)])
+    while q:
+      r, c = q.popleft()
+      directions = [[0, 1], [0, -1], [1, 0], [-1, 0]]
+      for x, y in directions:
+        rx, cy = r+x, c+y
+        if rx >= 0 and cy >= 0 and rx < ROWS and cy < COLS and grid[rx][cy] == '1':
+          grid[rx][cy] = '0' # IMPORTANT that the change is made here for every valid add-on to curr island
+          q.append((rx,cy))
+
+  for r in range(ROWS):
+    for c in range(COLS):
+      if grid[r][c] == '1':
+        helper(r, c)
+        res += 1
+  return res
