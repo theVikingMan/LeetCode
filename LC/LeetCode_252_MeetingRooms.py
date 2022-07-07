@@ -6,3 +6,4 @@ def canAttendMeetings(intervals):
         return True
 
 print(canAttendMeetings([[6,15],[13,20],[6,17]]))
+print(canAttendMeetings([[7,10],[2,4]]))

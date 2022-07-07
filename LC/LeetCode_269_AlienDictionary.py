@@ -20,8 +20,8 @@ def solution(words):
     visit[c] = True # mark as the cycle
     for nei in adj[c]:
       if dfs(nei): # if the dfs of its neis says its been seen in this cycle
-        return True # kill the algo
-    visit[c] = False # No cycle detected? Say its not part of the same cycle
+        return True # kill the algo due to cycle
+    visit[c] = False # No cycle detected. Say its not part of the same cycle
     res.append(c) # valid char, add it to res
 
   for c in adj:

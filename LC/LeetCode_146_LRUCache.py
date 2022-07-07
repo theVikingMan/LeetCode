@@ -31,7 +31,6 @@ class LRUCache(object):
           return self.cache[key].val # Return the node value back to the user
         return -1
 
-
     def put(self, key, value):
       if key in self.cache:
         self.remove(self.cache[key])
