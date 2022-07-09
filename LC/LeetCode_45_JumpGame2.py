@@ -36,3 +36,24 @@ print(solution([2,3,1,1,4])) # Output: 2
 #       res[i] = min(1 + res[j], res[i])
 #     resMin = min(res[i], resMin)
 #   return res[0]
+
+
+# ----------- Slowest Valid Ans, Recursion with Memoization ----- #
+
+# def jump(nums) -> int:
+#   dp = {}
+#   def helper(i):
+#     if i >= len(nums) - 1:
+#       return 0
+#     if i in dp:
+#       return dp[i]
+
+#     temp = float('inf')
+#     bound = min(len(nums), i + nums[i] + 1)
+
+#     for j in range(i + 1, bound):
+#       temp = min(temp, 1 + helper(j))
+
+#     dp[i] = temp
+#     return dp[i]
+#   return helper(0)
