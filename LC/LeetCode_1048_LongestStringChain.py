@@ -38,3 +38,29 @@ print(longestStrChain(["xbc","pcxbcf","xb","cxbc","pcxbc"]))
 #           answer = max(answer, 1 + dfs(nei))
 #       return answer
 #   return max(dfs(word) for word in words)
+
+# --------------- Recursion w/ Memo ------------ #
+
+# def longestStrChain(words):
+#   words.sort(key=lambda i:len(i))
+#   setWords = set(words)
+#   dp = {}
+#   res = 1
+
+#   def helper(string):
+#     if len(string) == 1:
+#       return 1
+#     if string in dp:
+#       return dp[string]
+
+#     outcome = 1
+#     for j in range(len(string)):
+#       prev = string[:j] + string[j+1:]
+#       if prev in setWords:
+#         outcome = max(outcome, 1 + helper(prev))
+#     dp[string] = outcome
+#     return dp[string]
+
+#   for i in range(len(words) -1, -1, -1):
+#     res = max(res, helper(words[i]))
+#   return res
