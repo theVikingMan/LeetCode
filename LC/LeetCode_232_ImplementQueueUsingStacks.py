@@ -1,5 +1,4 @@
 class MyQueue(object):
-
   def __init__(self):
     self.inStack = []
     self.outStack = []
