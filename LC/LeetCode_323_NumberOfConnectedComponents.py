@@ -1,3 +1,5 @@
+import collections
+
 def countComponents(n, edges):
     # creating an adgency list where each node is the parent
         # of themselves initally
@@ -43,3 +45,29 @@ def countComponents(n, edges):
     return res
 
 print(countComponents(5, [[0,1],[1,2],[3,4]]))
+
+# --------- ANother way ---------- #
+
+# def countComponents(n, edges):
+#   graph = collections.defaultdict(set)
+
+#   for s, e in edges:
+#     graph[s].add(e)
+#     graph[e].add(s)
+
+#   seen = set()
+#   def dfs(node):
+#     if node in seen:
+#       return
+#     seen.add(node)
+#     for nei in graph[node]:
+#       if nei not in seen:
+#         dfs(nei)
+#     return
+
+#   for node in graph.keys():
+#     if node not in seen:
+#       dfs(node)
+#     else:
+#       n -= 1
+#   return n
