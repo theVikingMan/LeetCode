@@ -27,3 +27,33 @@ print(maxAreaOfIsland([[0,0,1,0,0,0,0,1,0,0,0,0,0],
                        [0,0,0,0,0,0,0,0,0,0,1,0,0],
                        [0,0,0,0,0,0,0,1,1,1,0,0,0],
                        [0,0,0,0,0,0,0,1,1,0,0,0,0]]))
+
+
+# ------------ Iterative DFS (stack) ----------- #
+
+# def maxAreaOfIsland(grid):
+#   ROWS, COLS = len(grid), len(grid[0])
+#   seen = set()
+#   res = 0
+
+#   def helper(r, c):
+#     stack = [(r, c)]
+#     size = 1
+#     directions = [[1, 0], [-1, 0], [0, 1], [0, -1]]
+#     while stack:
+#       r, c = stack.pop()
+
+#       for x, y in directions:
+#         rx, cy = r+x, c+y
+#         if 0 <= rx < ROWS and 0 <= cy < COLS and (rx, cy) not in seen and grid[rx][cy] == 1:
+#           stack.append((rx, cy))
+#           seen.add((rx, cy))
+#           size += 1
+#     return size
+
+#   for r in range(ROWS):
+#     for c in range(COLS):
+#       if (r, c) not in seen and grid[r][c] == 1:
+#         seen.add((r, c))
+#         res = max(res, helper(r, c))
+#   return res
