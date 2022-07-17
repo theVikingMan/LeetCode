@@ -18,3 +18,27 @@ def canPartition(nums):
     return True if target in dp else False
 
 print(canPartition([1,5,11,5]))
+
+
+# --------- Recursive with Memoization --------- #
+
+def canPartition(nums):
+  total = sum(nums)
+  if total % 2:
+    return False
+  target = total // 2
+  memo = {}
+
+  def helper(i, curr):
+    if i == len(nums) or curr > target:
+      return False
+    if curr == target:
+      return True
+    if (i, curr) in memo:
+      return memo[(i, curr)]
+
+    memo[(i, curr)] = helper(i + 1, curr + nums[i]) or helper(i+1, curr)
+    return memo[(i, curr)]
+  return helper(0, 0)
+
+print(canPartition([1,5,11,5]))

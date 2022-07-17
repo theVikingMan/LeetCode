@@ -15,7 +15,7 @@ def change(amount, coins):
     dp = newDP
   return dp[amount]
 
-print(change(5, [1,2,5])) # Output: 4
+print(change(10, [2, 4])) # Output: 4
 
 # Time: O(n * m)
 # Space: O(n)
