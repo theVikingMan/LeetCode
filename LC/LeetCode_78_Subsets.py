@@ -7,8 +7,7 @@
 
 
 def subsets(nums):
-    output = []
-    subset = []
+    output, subset = [], []
 
     def dfs(i):
         if i >= len(nums):

@@ -7,7 +7,6 @@ def accountsMerge(accounts):
 
   for acc in accounts:
     name = acc[0]
-
     # map them to a single home node email to make graph simpler
     for e in acc[1:]:
       graph[e].add(acc[1])

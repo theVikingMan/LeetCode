@@ -16,7 +16,7 @@ class LRUCache(object):
     def remove(self, node): # remove node from list
       # node will be the middle node that we want to delete
       prev, nxt = node.prev, node.next
-      prev.next, nxt.prev = nxt, prev
+      prev.next, nxt.prev = nxt, prev # unlink the surrounding nodes, kills the middle
 
 
     def insert(self, node): # insert at right most position, just before the right pointer
@@ -33,9 +33,9 @@ class LRUCache(object):
 
     def put(self, key, value):
       if key in self.cache:
-        self.remove(self.cache[key])
-      self.cache[key] = Node(key, value)
-      self.insert(self.cache[key])
+        self.remove(self.cache[key]) # remove node to then re-insert in LRU fashion
+      self.cache[key] = Node(key, value) # update in dictionary
+      self.insert(self.cache[key]) # add node (back if exisiting)
 
       if len(self.cache) > self.cap:  # remove from the linked list and delete the LRU from the hashmap
         lru = self.left.next
