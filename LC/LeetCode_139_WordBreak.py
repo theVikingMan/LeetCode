@@ -1,22 +1,17 @@
 def wordBreak(s, wordDict):
     # Initialize each state to False as that is there base state
     dp = [False] * (len(s) + 1)
-    #
-    dp[len(s)] = True
-    # Work backwards on the given string
-    for i in range(len(s) - 1, -1, -1):
-        # At each letter in the given string, check each word
+    dp[len(s)] = True # set base value if the end can be reached
+
+    for i in range(len(s) - 1, -1, -1): # Work backwards on the given string
         for w in wordDict:
-            # Inialize the word length for word check at current state
             n = len(w)
-            # Inbounds and same word...
-            if (i+n <= len(s) and s[i:i+n] == w):
+            if (i + n <= len(s) and s[i: i+n] == w): # Inbounds and same word
                 # Want to track that it is possible not just with current word and place
                 # But as well with the +1 state
                 dp[i] = dp[i + len(w)]
-            if dp[i]:
+            if dp[i]: # making sure not to override a True state (old mistake)
                 break
-
     return dp[0]
 
 print(wordBreak("leetcode", ["leet","code"]))

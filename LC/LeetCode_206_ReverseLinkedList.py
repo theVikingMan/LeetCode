@@ -1,7 +1,4 @@
 def reverseList(head):
-  if not head: # check if nothing was given as an input
-    return head # head will be empty if so
-
   prev, curr = None, head # curr points to start of reverse list
 
   while curr:
@@ -11,3 +8,4 @@ def reverseList(head):
     curr = after
 
   return prev # prev will be the only non-null pointer which is the new head
+  # Interesting -> If no head node is given, prev will be None which is correct output

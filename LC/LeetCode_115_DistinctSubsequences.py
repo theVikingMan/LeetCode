@@ -1,4 +1,3 @@
-import heapq
 
 def numDistinct(s, t):
   cache = {}
