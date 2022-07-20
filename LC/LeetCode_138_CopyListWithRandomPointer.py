@@ -6,15 +6,14 @@ class Node:
         self.next = next
         self.random = random
 
-
 class Solution:
     def copyRandomList(self, head):
         oldToNew = { None : None } # copying graphs or LLs requires a old-to-new dict
 
-        # Map just the nodes, so new node with old node's value
+        # Map only old nodes values so we can point to copy nodes for pointers
         cur = head
-        while cur: # while there are still nodes to look at
-          oldToNew[cur] = Node(cur.val) # old node is mapped to new hallow node with only value
+        while cur:
+          oldToNew[cur] = Node(cur.val)
           cur = cur.next
 
         # Set pointers
