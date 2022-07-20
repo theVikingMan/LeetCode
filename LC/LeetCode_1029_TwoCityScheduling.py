@@ -1,7 +1,8 @@
-def twoCitySchedCost(self, costs):
+def twoCitySchedCost(costs):
   diffs = []
   for c1,c2 in costs:
     diffs.append([c2 - c1, c1, c2])
+    # Negative diffs mean more adv to go city B, positive mean go city A
 
   diffs.sort()
   res = 0

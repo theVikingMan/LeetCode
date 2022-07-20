@@ -7,11 +7,11 @@ def decodeString(s):
     else:
       substring = ""
       while stack[-1] != "[":
-        substring = stack.pop() + substring
+        substring = stack.pop() + substring # keeps original ordering of chars
       stack.pop() # for opening bracket
 
       k = ""
-      while stack and stack[-1].isdigit():
+      while stack and stack[-1].isdigit(): # need to grab whole mutli num (i.e., '57')
         k = stack.pop() + k
       stack.append(int(k) * substring)
   return "".join(stack)

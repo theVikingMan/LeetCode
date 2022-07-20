@@ -1,11 +1,11 @@
-def removeDuplicates(self, s):
+def removeDuplicates(s):
     output = []
     for ch in s:
-        if output and ch == output[-1]: 
+        if output and ch == output[-1]:
             output.pop()
-        else: 
+        else:
             output.append(ch)
     return ''.join(output)
-        
-        
-print(removeDuplicates("abbacba"))
+
+
+print(removeDuplicates("abbbacba"))

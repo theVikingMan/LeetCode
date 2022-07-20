@@ -1,3 +1,26 @@
+
+def suggestedProducts(products, searchWord):
+  res = []
+  products.sort()
+  l, r = 0, len(products) - 1
+
+  for i in range(len(searchWord)):
+
+    while l <= r and len(products[l]) <= i or searchWord[i] != products[l][i]:
+      l += 1
+    while l <= r and len(products[r]) <= i or searchWord[i] != products[r][i]:
+      r -= 1
+
+    temp = []
+    for j in range(min(r-l+1, 3)):
+      temp.append(products[l+j])
+    res.append(temp)
+  return res
+
+print(suggestedProducts(["havana"], "tatiana"))
+
+# --------- Trie implementation (valid) ---------- #
+
 class TrieNode:
   def __init__(self):
     self.children = {}

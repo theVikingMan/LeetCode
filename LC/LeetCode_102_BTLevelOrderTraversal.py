@@ -6,6 +6,7 @@ import collections
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
 class Solution:
   def levelOrder(self, root):
     if not root:
@@ -28,24 +29,21 @@ class Solution:
     return res
 
 # ----------- RECURSIVELY ----------- #
-# class Solution:
-#     def levelOrder(self, root):
-#         ordering = {}
-#         output = []
 
-#         def dfs(node, h):
-#             if not node:
-#                 return
-#             if h not in ordering:
-#                 ordering[h] = []
-#             ordering[h].append(node.val)
-#             dfs(node.left, h + 1)
-#             dfs(node.right, h + 1)
+# def levelOrder(root):
+#   res = []
 
-#         dfs(root, 0)
+#   def helper(node, level):
+#     if not node:
+#       return
+#     if len(res) < level:
+#       res.append([node.val])
+#     else:
+#       res[level-1].append(node.val)
 
-#         for i in range(len(ordering)):
-#             output.append(ordering[i])
+#     helper(node.left, level+1)
+#     helper(node.right, level+1)
 
-#         return output
+#   helper(root, 1)
+#   return res
 
