@@ -5,7 +5,7 @@ def suggestedProducts(products, searchWord):
   l, r = 0, len(products) - 1
 
   for i in range(len(searchWord)):
-
+    # pointers havent overlapped OR len of word is TOO short or chars dont match
     while l <= r and len(products[l]) <= i or searchWord[i] != products[l][i]:
       l += 1
     while l <= r and len(products[r]) <= i or searchWord[i] != products[r][i]:

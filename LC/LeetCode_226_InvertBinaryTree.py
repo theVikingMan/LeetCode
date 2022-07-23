@@ -14,10 +14,7 @@ class Solution(object):
             return
         # holder for one of the nodes as we will modify it but need a version that is
         # unmodified
-        temp = root.right
-        root.right = root.left
-        root.left = temp
-
+        root.left, root.right = root.right, root.left
         self.invertTree(root.left)
         self.invertTree(root.right)
 
