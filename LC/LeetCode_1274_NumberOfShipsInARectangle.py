@@ -1,3 +1,7 @@
+class Point(object):
+	def __init__(self, x, y):
+		self.x = x
+		self.y = y
 
 class Solution(object):
   def countShips(self, sea, topRight, bottomLeft):
@@ -14,7 +18,8 @@ class Solution(object):
       # Calculate new mid points for each new recusive quad
       midX = (bottomLeft.x + topRight.x) // 2
       midY = (bottomLeft.y + topRight.y) // 2
-      mid = Point(midX, midY)
+      mid = Point(midX, midY) # create new point object with new mids
+
       # helps to draw the quad grid out
       topLeftQ = findShips(Point(mid.x, topRight.y), Point(bottomLeft.x, mid.y + 1))
       topRightQ = findShips(topRight, Point(mid.x + 1, mid.y + 1))
@@ -36,8 +41,3 @@ class Solution(object):
 #		 :type bottomLeft: Point
 #        :rtype bool
 #        """
-#
-#class Point(object):
-#	def __init__(self, x, y):
-#		self.x = x
-#		self.y = y

@@ -28,3 +28,22 @@ def minCostConnectPoints(points):
     return res
 
 print(minCostConnectPoints([[0,0],[2,2],[3,10],[5,2],[7,0]]))
+
+
+def maxSumMinProduct(points):
+  res = 0
+  minHeap = [[0, 0, points[0][0], points[0][1]]]
+  visited = set()
+  visited.add(0)
+
+  while minHeap and len(visited) < len(points):
+    dis, point, x1, y1 = heapq.heappop(minHeap)
+    res += dis
+    visited.add(point)
+    for i in range(len(points)):
+      if i not in visited and i != point:
+        x2, y2 = points[i]
+        distance = abs(x1-x2) + abs(y1-y2)
+        heapq.heappush(minHeap, [distance, i, x2, y2])
+
+  return res

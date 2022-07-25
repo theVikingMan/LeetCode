@@ -12,3 +12,14 @@ class Solution:
                 left -= 1
 
         return left + right
+
+def minAddToMakeValid(s):
+  stack = []
+  dict = {")":"("}
+
+  for l in s:
+    if not stack or l == "(" or stack[-1] != dict[l]:
+      stack.append(l)
+    else:
+      stack.pop()
+  return len(stack)

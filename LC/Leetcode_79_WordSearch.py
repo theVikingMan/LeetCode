@@ -15,9 +15,9 @@ def exist(board, word):
         path.add((r, c)) # Mark letter is in our path
         # check all directions
         res = (dfs(r + 1, c, i + 1) or
-              dfs(r - 1, c, i + 1) or
-              dfs(r, c + 1, i + 1) or
-              dfs(r, c - 1, i + 1))
+               dfs(r - 1, c, i + 1) or
+               dfs(r, c + 1, i + 1) or
+               dfs(r, c - 1, i + 1))
 
         path.remove((r, c)) # no longer checking that path
         return res

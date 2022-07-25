@@ -1,9 +1,5 @@
 from collections import defaultdict
 
-"""
-https://www.notion.so/paulonteri/Hashtables-Hashsets-220d9f0e409044c58ec6c2b0e7fe0ab5#cf22995975274881a28b544b0fce4716
-"""
-
 def invalidTransactions(transactions):
     invalid = []
 

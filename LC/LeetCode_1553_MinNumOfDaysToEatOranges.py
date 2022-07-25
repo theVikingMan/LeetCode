@@ -7,6 +7,7 @@ def minDays(n):
 
     one = 1 + (num % 2) + dfs(num // 2)
     two = 1 + (num % 3) + dfs(num // 3)
+
     dp[num] = min(one, two)
     return dp[num]
   return dfs(n)

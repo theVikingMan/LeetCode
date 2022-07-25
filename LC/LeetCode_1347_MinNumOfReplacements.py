@@ -13,3 +13,15 @@ def minSteps(s, t):
 
 
 print(minSteps('aabba', 'abccd'))
+
+
+# ----------------- Alternative Solution ----------------- #
+
+def minSteps(s, t):
+  sCount = collections.Counter(s)
+  tCount = collections.Counter(t)
+  res = 0
+
+  for key, value in sCount.items():
+    res += max(0, value - tCount[key])
+  return res
