@@ -4,6 +4,8 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
+
+
 def trimBST(root, low, high):
   if not root: # reached an end of a path
     return None
