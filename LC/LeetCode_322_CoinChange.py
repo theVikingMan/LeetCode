@@ -20,3 +20,6 @@ def coinChange(coins, amount):
 
 
 print(coinChange([1], 0))
+
+# T: O(n * m) --> n is amount; m length of coins
+# S: O(n) --> length of coins

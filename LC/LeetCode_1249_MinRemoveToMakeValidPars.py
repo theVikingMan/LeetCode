@@ -18,7 +18,7 @@ def minRemoveToMakeValid(s):
     return "".join(res)
 
   otherRes = []
-  # Phase 1: handle opening paras -> open <= close
+  # Phase 2: handle opening paras -> open <= close
   for i in range(len(res) - 1, -1, -1):
     letter = res[i]
     if letter == "(":

@@ -1,14 +1,9 @@
 
 # --------------- O(1) space Solution ---------------- #
-def gameOfLife(self, board):
-    #  Original |  New   | State
-    #     0     |   0    |   0
-    #     1     |   0    |   1
-    #     0     |   1    |   2
-    #     1     |   1    |   3
-
+def gameOfLife(board):
     ROWS, COLS = len(board), len(board[0])
 
+    # Phase 1ish: count all the neighbors
     def countNei(r, c):
         nei = 0
         for i in range(r - 1, r + 2):
@@ -19,15 +14,17 @@ def gameOfLife(self, board):
                     nei += 1
         return nei
 
+    # Phase 2: find all the to-be-alive cells
     for r in range(ROWS):
         for c in range(COLS):
             nei = countNei(r, c)
-            if board[r][c]:
+            if board[r][c]: # alive cell
                 if nei in [2, 3]:
                     board[r][c] = 3
-            elif nei == 3:
+            elif nei == 3: # dead cell back to life?
                 board[r][c] = 2
 
+    # Phase 3: translate all the truth table nums into 1s and 0s
     for r in range(ROWS):
         for c in range(COLS):
             if board[r][c] == 1:
@@ -36,6 +33,12 @@ def gameOfLife(self, board):
                 board[r][c] = 1
 
 print(gameOfLife([[0,1,0],[0,0,1],[1,1,1],[0,0,0]]))
+
+    #  Original |  New   | State
+    #     0     |   0    |   0
+    #     1     |   0    |   1
+    #     0     |   1    |   2
+    #     1     |   1    |   3
 
 # def gameOfLife(board):
 #     # nei == 3 : 0 --> 1 : rebirth

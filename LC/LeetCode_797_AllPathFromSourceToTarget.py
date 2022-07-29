@@ -1,6 +1,7 @@
 def allPathsSourceTarget(graph):
   n = len(graph)
-  g = {i:[] for i in range(n)}
+  g = { i:[] for i in range(n) }
+
   for i in range(n):
     for p in graph[i]:
       g[i].append(p)
@@ -21,3 +22,5 @@ def allPathsSourceTarget(graph):
     return dp[node]
 
   return dfs(0)
+
+print(allPathsSourceTarget([[1,2],[3],[3],[]]))

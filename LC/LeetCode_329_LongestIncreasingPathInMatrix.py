@@ -12,10 +12,12 @@ def solution(matrix):
       return dp[(r, c)]
 
     visit.add((r,c))
-    dp[(r, c)] = 1 + max(dfs(r + 1, c, matrix[r][c]),
-                          dfs(r, c + 1, matrix[r][c]),
-                          dfs(r - 1, c, matrix[r][c]),
-                          dfs(r, c - 1, matrix[r][c]))
+    dp[(r, c)] = (
+      1 + max(dfs(r + 1, c, matrix[r][c]),
+              dfs(r, c + 1, matrix[r][c]),
+              dfs(r - 1, c, matrix[r][c]),
+              dfs(r, c - 1, matrix[r][c])))
+
     visit.remove((r,c))
     return dp[(r,c)]
 
@@ -25,3 +27,6 @@ def solution(matrix):
   return res
 
 print(solution([[9,9,4],[6,6,8],[2,1,1]]))
+
+# T: O(n * m) --> n is length of ROWS; m is length of COLS
+# S: O(S) --> S is the height of call stack which is n * m

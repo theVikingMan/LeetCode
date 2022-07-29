@@ -1,7 +1,6 @@
 class Solution:
     def minAddToMakeValid(self, s: str) -> int:
-        left = 0
-        right = 0
+        left = right = 0
 
         for p in s:
             if p == "(":
@@ -12,6 +11,9 @@ class Solution:
                 left -= 1
 
         return left + right
+
+
+
 
 def minAddToMakeValid(s):
   stack = []

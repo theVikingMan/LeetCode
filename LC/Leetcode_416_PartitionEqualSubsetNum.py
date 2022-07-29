@@ -19,6 +19,9 @@ def canPartition(nums):
 
 print(canPartition([1,5,11,5]))
 
+# T: O(n * m) --> n is the sumSubSets we make, m is the elements in nums
+# S: O(n) --> constant space give only 1-2 sets at any given time
+
 
 # --------- Recursive with Memoization --------- #
 
