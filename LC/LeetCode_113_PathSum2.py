@@ -15,6 +15,7 @@ def pathSum(root, targetSum):
           currArray.append(node.val)
           output.append(currArray)
           return
+
       helper(node.left, total, currArray + [node.val])
       helper(node.right, total , currArray + [node.val])
 

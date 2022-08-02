@@ -1,13 +1,12 @@
-
-
 def candyCrush(board):
   # error checking
   if not board:
     return board
 
   ROWS, COLS = len(board), len(board[0])
-
+  # Flag for telling if any changes have been made => keep recursings
   done = True
+
   # STEP 1: crush rows using Sliding Window
   for r in range(ROWS):
     for c in range(COLS - 2):

@@ -12,6 +12,7 @@ def isToeplitzMatrix(matrix):
         return False
   return True
 
+# ------------------ Alternative Method ------- #
 
 def isToeplitzMatrix(matrix):
   tracker = collections.defaultdict(list)

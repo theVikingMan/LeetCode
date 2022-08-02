@@ -19,7 +19,7 @@ def gameOfLife(board):
         for c in range(COLS):
             nei = countNei(r, c)
             if board[r][c]: # alive cell
-                if nei in [2, 3]:
+                if nei in [2, 3]: # 2 or 3 mean living to the next round
                     board[r][c] = 3
             elif nei == 3: # dead cell back to life?
                 board[r][c] = 2

@@ -11,9 +11,11 @@ def knightDialer(n):
       return 1
     if (idx, curr) in dp:
       return dp[(idx, curr)]
+
     combos = 0
     for num in paths[curr]:
       combos += helper(idx-1, num)
+
     dp[(idx, curr)] = combos
     return dp[(idx, curr)]
 

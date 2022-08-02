@@ -26,7 +26,7 @@ def invalidTransactions(transactions):
             continue
 
         # # check if person did transaction within 60 minutes in a different city
-        for inv_time in range(time-60, time+61):
+        for inv_time in range(time - 60, time + 61):
             if inv_time not in transaction_time:
                 continue
             if name not in transaction_time[inv_time]:

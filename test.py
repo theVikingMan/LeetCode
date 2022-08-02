@@ -1,4 +1,11 @@
-intervals = [[0,30],[5,10],[15,20]]
+from enum import Enum
 
-start = sorted([s for s, t in intervals])
-print(start)
+class AccountStatus:
+  available, reserved, checked_out = 1, 2, 3
+
+class Book:
+  def __init__(self, status=AccountStatus.available):
+    self.status = status
+
+b = Book()
+print(b.status)

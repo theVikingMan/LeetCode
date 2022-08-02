@@ -33,8 +33,8 @@ class Solution(object):
 
     while stack:
       nextNode = stack.pop()
-      curr.next = nextNode
-      nextNode.prev = curr
+      curr.next = nextNode # connect nodes pointers
+      nextNode.prev = curr # connect nodes pointers
       while curr.next:
         curr = curr.next
 

@@ -9,7 +9,7 @@ def decodeString(s):
       substring = ""
       while stack[-1] != "[":
         substring = stack.pop() + substring # keeps original ordering of chars
-      stack.pop() # for opening bracket
+      stack.pop() # kill opening bracket
 
       # get the multiplyer
       k = ""

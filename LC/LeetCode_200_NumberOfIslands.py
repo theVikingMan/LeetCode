@@ -41,15 +41,15 @@ def numIslands(grid):
   res = 0
 
   def helper(i, j):
-    q = collections.deque([(i,j)])
+    q = collections.deque([(i, j)])
     while q:
       r, c = q.popleft()
       directions = [[0, 1], [0, -1], [1, 0], [-1, 0]]
       for x, y in directions:
-        rx, cy = r+x, c+y
+        rx, cy = r + x, c + y
         if rx >= 0 and cy >= 0 and rx < ROWS and cy < COLS and grid[rx][cy] == '1':
           grid[rx][cy] = '0' # IMPORTANT that the change is made here for every valid add-on to curr island
-          q.append((rx,cy))
+          q.append((rx, cy))
 
   for r in range(ROWS):
     for c in range(COLS):

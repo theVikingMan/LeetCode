@@ -1,5 +1,4 @@
 def isValid(s):
-
     stack = []
     mapping = {")": "(", "}": "{", "]": "["}
 

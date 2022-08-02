@@ -15,6 +15,7 @@ def wordBreak(s, wordDict):
         combos = helper(i+wLen)
         for postfix in combos:
           outcome.append([w] + postfix)
+
     dp[i] = outcome
     return dp[i]
 

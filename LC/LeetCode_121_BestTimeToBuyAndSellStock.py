@@ -1,7 +1,7 @@
 def maxProfit(prices):
-    maxMade= 0
-    low = prices[0]
-    for p in prices[1:]:
+    maxMade = 0
+    low = float('inf')
+    for p in prices:
         tempProfit = p - low
         maxMade = max(tempProfit, maxMade)
         if p < low:
