@@ -13,14 +13,17 @@ print(rob([1, 2, 3, 1]))
 
 # def rob(arr):
 #   cache = {}
+
 #   def recurse(one, two, idx):
 #     if idx == len(arr):
 #       return two
 #     if idx in cache:
 #       return cache[idx]
+
 #     temp = two
 #     two = max(two, one + arr[idx])
 #     one = temp
+
 #     cache[idx] = recurse(one, two, idx + 1)
 #     return cache[idx]
 

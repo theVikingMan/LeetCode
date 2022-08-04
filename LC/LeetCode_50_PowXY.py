@@ -5,12 +5,12 @@ def myPow(x, n):
 
     res = helper(x, n // 2)
     res = res * res
-    return res * x if n % 2 else res
+    return res * x if n % 2 else res # mod by 2 to see if we need another multi (3^5 = [3^2 * 3^2] * 3)
 
   output = helper(x, abs(n))
   return output if n >= 0 else 1 / output
 
-print(myPow(2, -2))
+print(myPow(3, 5))
 
 # ------------- Brute Force (times out) ------------- #
 

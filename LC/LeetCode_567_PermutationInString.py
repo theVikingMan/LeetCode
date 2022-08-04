@@ -4,7 +4,6 @@ def checkInclusion(p, s):
     countP[ord(l) - ord("a")] += 1
 
   countS = [0 for _ in range(26)]
-  res = []
 
   l, n = 0, len(p)
   for r in range(len(s)):

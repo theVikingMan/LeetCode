@@ -1,4 +1,3 @@
-import collections
 
 def findAnagrams(s, p):
   sCount, pCount = [0] * 26, [0] * 26

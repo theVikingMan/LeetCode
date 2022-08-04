@@ -11,7 +11,7 @@ def fullJustify(words, maxWidth):
       width += len(curWord) + 1 # +1 space for each word
       i += 1
     else: # not allowed to take the current word
-      spaces = maxWidth - width + len(cur_line)
+      spaces = maxWidth - width + len(cur_line) # normalize for all spaces out of width
       added = 0
       j = 0
       while added < spaces:
@@ -25,7 +25,7 @@ def fullJustify(words, maxWidth):
       cur_line = []
       width = 0
 
-  for w in range(len(cur_line) - 1):
+  for w in range(len(cur_line) - 1): # add the single spaces to the last rows words but not the end
     cur_line[w] += " "
   cur_line[-1] += " " * (maxWidth - width + 1)
   res.append("".join(cur_line))

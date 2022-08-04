@@ -12,4 +12,4 @@ def solution(nums, k):
 
   return res
 
-print(solution([1,2,3], 3))
+print(solution([1,2,-2,3], 3))
