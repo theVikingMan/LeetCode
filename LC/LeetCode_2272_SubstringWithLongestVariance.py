@@ -28,4 +28,4 @@ def largestVariance(s):
                 res = max(res, max_subarray)
     return res
 
-print(largestVariance("aababbb"))
+print(largestVariance("aababbbc"))

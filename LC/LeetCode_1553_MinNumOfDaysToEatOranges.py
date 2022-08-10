@@ -10,7 +10,10 @@ def minDays(n):
 
     dp[num] = min(one, two)
     return dp[num]
+
   return dfs(n)
+
+print(minDays(10))
 
 
 # --------- DFS with Memoization (TLE) ------- #

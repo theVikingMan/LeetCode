@@ -4,14 +4,14 @@ import bisect
 class FileSystem(object):
 
     def __init__(self):
-        self.paths = collections.defaultdict(list)
+        self.dirs = collections.defaultdict(list)
         self.files = collections.defaultdict(str)
 
     def ls(self, path):
         if path in self.files:
           return [path.split("/")[-1]]
         else:
-          return self.paths[path]
+          return self.dirs[path]
 
 
     def mkdir(self, path):
@@ -20,12 +20,12 @@ class FileSystem(object):
         for i in range(1, len(directs)):
           curr = "/".join(directs[:i]) or "/"
 
-          if curr not in self.paths or directs[i] not in self.paths[curr]:
-            bisect.insort(self.paths[curr], directs[i])
+          if curr not in self.dirs or directs[i] not in self.dirs[curr]:
+            bisect.insort(self.dirs[curr], directs[i])
 
 
     def addContentToFile(self, filePath, content):
-        if filePath not in self.paths:
+        if filePath not in self.dirs:
           self.mkdir(filePath)
         self.files[filePath] += content
 

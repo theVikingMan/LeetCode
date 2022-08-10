@@ -61,10 +61,11 @@ def numberToWords(num):
         rest = num - hundred * 100
         if hundred and rest:
             return one(hundred) + ' Hundred ' + two(rest)
-        elif not hundred and rest:
-            return two(rest)
         elif hundred and not rest:
             return one(hundred) + ' Hundred'
+        elif not hundred and rest:
+            return two(rest)
+
 
      # Step 3: Calculate the silos for each digit place (3 digits)
     billion = num // 1000000000

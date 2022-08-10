@@ -18,22 +18,23 @@ def reverseWords(s):
   q.appendleft("".join(word))
   return " ".join(q)
 
+print(reverseWords("  hello world  "))
 
-def reverseWords(s):
-  return " ".join(reversed(s.split()))
+# def reverseWords(s):
+#   return " ".join(reversed(s.split()))
 
-def reverseWords(s):
-  res = []
-  sub = ""
-  i = len(s) - 1
-  while i >= 0:
-    if s[i] != " ":
-      sub += s[i]
-    else:
-      if sub:
-        res.append(sub[::-1])
-        sub = ""
-    i -= 1
-  if sub:
-    res.append(sub[::-1])
-  return " ".join(res)
+# def reverseWords(s):
+#   res = []
+#   sub = ""
+#   i = len(s) - 1
+#   while i >= 0:
+#     if s[i] != " ":
+#       sub += s[i]
+#     else:
+#       if sub:
+#         res.append(sub[::-1])
+#         sub = ""
+#     i -= 1
+#   if sub:
+#     res.append(sub[::-1])
+#   return " ".join(res)

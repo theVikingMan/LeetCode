@@ -34,7 +34,7 @@ class LRUCache(object):
     def put(self, key, value):
       if key in self.cache:
         self.remove(self.cache[key]) # remove node to then re-insert in LRU fashion
-      self.cache[key] = Node(key, value) # update in dictionary
+      self.cache[key] = Node(key, value) # update / override in dictionary
       self.insert(self.cache[key]) # add node (back if exisiting)
 
       if len(self.cache) > self.cap:  # remove from the linked list and delete the LRU from the hashmap

@@ -7,10 +7,10 @@ def minMeetingRooms(intervals):
     s, e = 0, 0
 
     while s < len(intervals):
-        if start[s] < end[e]:
+        if start[s] < end[e]: # a meeting has started before another has ended
             s += 1
             count += 1
-        else:
+        else: # one of the started meetings just ended
             e += 1
             count -= 1
         res = max(count, res)

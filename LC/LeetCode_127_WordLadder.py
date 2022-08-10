@@ -7,16 +7,16 @@ def ladderLength(beginWord, endWord, wordList):
   if endWord not in wordList:
     return 0
 
-  graph = collections.defaultdict(list)
   if beginWord not in wordList:
     wordList.append(beginWord)
 
+  graph = collections.defaultdict(list)
   for w in wordList:
     for j in range(len(w)):
       pattern = w[:j] + '*' + w[j+1:]
       graph[pattern].append(w)
 
-  visit = set([beginWord])
+  visit = set([beginWord]) # [] means you can add to the set without it breaking up
   q = collections.deque([beginWord])
   level = 1
 
