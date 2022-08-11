@@ -39,6 +39,7 @@ class Solution:
 
     return True
 
+
   def print_data(self):
     print("------- Total amount spent -------")
     for date, data in self.trans_history.items():
@@ -49,6 +50,7 @@ class Solution:
     for date, data in self.cashback_history.items():
       for company, total in data.items():
         print(f"{company}: {total} on {date}")
+
 
   def calc_top_N(self, n, dateToPull):
     maxHeap = []
