@@ -6,7 +6,7 @@ def getFood(grid):
 
   for r in range(ROWS):
     for c in range(COLS):
-      if grid[r][c] == '*':
+      if grid[r][c] == '*': # start traversal from starting point
         q = collections.deque([(0, r, c)]) # step, (position)
         directions = [[1, 0], [-1, 0], [0, 1], [0, -1]]
         visit.add((r, c))

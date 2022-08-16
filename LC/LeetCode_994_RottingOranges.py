@@ -20,8 +20,8 @@ def solution(grid):
       for dr, dc in directions: # for each direction that we can travel
         row, col = dr + r, dc + c # create the new coordinate as we loop over the directions
         if (row < 0 or col < 0 or # base cases of when to not run BFS
-          row == ROWS or col == COLS or
-          grid[row][col] != 1):
+            row == ROWS or col == COLS or
+            grid[row][col] != 1):
           continue
         grid[row][col] = 2 # marking current fresh orange to rotten / Similar to visit set()
         q.append([row, col]) # making a part of the rotton oranges to explore

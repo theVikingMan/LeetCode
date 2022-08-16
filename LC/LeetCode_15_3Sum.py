@@ -23,6 +23,9 @@ def threeSum(nums):
 
 print(threeSum([-1,0,1,2,-1,-4]))
 
+# T: O(n^2) -> potentially have to look over all the elements (2sum) and sort(n * log(n))
+# S: O(1) -> only pointers but result variable or sorting could add space (log n for sorting)
+
 # STRATEGY
 # 3 pointers. Using for loop for 1st, then 2 pointers for the last 2
 # Array must be sorted for this to work with 2 pointers

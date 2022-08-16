@@ -1,7 +1,7 @@
 def canVisitAllRooms(rooms):
-  roomLength = len(rooms)
-  adj = {i:[] for i in range(roomLength)}
-  for i in range(roomLength):
+  n = len(rooms)
+  adj = { i:[] for i in range(n) }
+  for i in range(n):
     for key in rooms[i]:
       adj[i].append(key)
 
@@ -15,6 +15,6 @@ def canVisitAllRooms(rooms):
       dfs(nei)
     return True
 
-  return dfs(0) and len(visit) == roomLength
+  return dfs(0) and len(visit) == n
 
 print(canVisitAllRooms([[1,3],[3,0,1],[2],[0]]))

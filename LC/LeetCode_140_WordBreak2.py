@@ -3,7 +3,7 @@ def wordBreak(s, wordDict):
   dp = {}
 
   def helper(i):
-    if i == len(s):
+    if i == len(s): # hit the end == valid path basically
       return [[]]
     if i in dp:
       return dp[i]

@@ -20,13 +20,12 @@ class Solution:
                 i += 3
                 break
             i += 1
-
         return i
 
     def valid_tag(self, tag):
         if len(tag) > 9 or len(tag) < 1: return False
-        if tag != tag.upper(): return False
-        if not tag.isalpha(): return False
+        if tag != tag.upper(): return False # All letters should be upper
+        if not tag.isalpha(): return False # All letters should be alpha numeric
         return True
 
     def isValid(self, code: str) -> bool:
