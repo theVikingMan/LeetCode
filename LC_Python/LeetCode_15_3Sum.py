@@ -23,7 +23,7 @@ def threeSum(nums):
 
 print(threeSum([-1,0,1,2,-1,-4]))
 
-# T: O(n^2) -> potentially have to look over all the elements (2sum) and sort(n * log(n))
+# T: O(n^2) -> potentially perform 2sum n times (n * n) and sort(n * log(n))
 # S: O(1) -> only pointers but result variable or sorting could add space (log n for sorting)
 
 # STRATEGY
