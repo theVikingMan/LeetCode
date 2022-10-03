@@ -1,14 +1,19 @@
-def numSubarrayProductLessThanK(nums, k):
-  l, r, n = 0, 0, len(nums)
+import collections
 
-  result, curr = 0, 1
-  while r < n:
-    curr *= nums[r]
-    while curr >= k:
-      curr /= nums[l]
-      l += 1
-    result += r - l + 1
-    r += 1
-  return result
+def isValidSudoku(board):
+  seenValues = collections.defaultdict(set)
 
-print(numSubarrayProductLessThanK([10,5,2,6], 100))
+  ROWS, COLS = len(board), len(board[0])
+  for r in range(ROWS):
+    for c in range(COLS):
+      element = board[r][c]
+      if element == ".": continue
+      if element in seenValues[r] or element in seenValues[c] or element in seenValues[(r // 3, c // 3)]:
+        return False
+      seenValues[r].add(element)
+      seenValues[c].add(element)
+      seenValues[(r // 3, c // 3)].add(element)
+
+  return True
+
+print(isValidSudoku([["5","3",".",".","7",".",".",".","."],["6",".",".","1","9","5",".",".","."],[".","9","8",".",".",".",".","6","."],["8",".",".",".","6",".",".",".","3"],["4",".",".","8",".","3",".",".","1"],["7",".",".",".","2",".",".",".","6"],[".","6",".",".",".",".","2","8","."],[".",".",".","4","1","9",".",".","5"],[".",".",".",".","8",".",".","7","9"]]))

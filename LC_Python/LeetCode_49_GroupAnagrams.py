@@ -15,3 +15,18 @@ print(solution(["eat","tea","tan","ate","nat","bat"]))
 
 # T: O(N * M) -> number of words times number of letters
 # S: O(N) --> the output dictionary with the count array always constant at 26
+
+def solution(strs):
+  output = []
+  groups = collections.defaultdict(list)
+
+  for word in strs:
+    groups[tuple(sorted(word))].append(word)
+
+  for _, value in groups.items():
+    output.append(value)
+
+  return output
+
+# T: O(N*K*log(K)) -> length of input array(N) * sorting for each word (length of each word is K)
+# S: O(N) --> the output dictionary with the count array always constant at 26

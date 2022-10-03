@@ -1,12 +1,19 @@
+
+# ------------- Sliding Window ------------- #
+
 def minSubArrLen(target, nums):
-  l, total = 0, 0
-  res = float('inf') # Set to big value as we are trying to minimize
+    output, leftPointer, currentSum = float('inf'), 0, 0
 
-  for r in range(len(nums)): # Method of shifting our right pointer
-    total += nums[r]
-    while total >= target: # while loop is the sliding window for the L pointer
-      res = min(res, r - l + 1) # constantly update res for the length given valid input
-      total -= nums[l] # clean up nums
-      l += 1
+    for rightPointer in range(len(nums)):
+      currentValue = nums[rightPointer]
+      currentSum += currentValue
+      while currentSum >= target:
+        output = min(output, rightPointer - leftPointer + 1)
+        leftValue = nums[leftPointer]
+        currentSum -= leftValue
+        leftPointer += 1
 
-  return 0 if res == float('inf') else res
+    return output if output != float("inf") else 0
+
+# T: O(n) -> 2 pointer techniques are just considered 2 for-loops
+# S: O(1) -> no auxiliary space, just constant 2 pointers

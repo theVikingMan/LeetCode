@@ -1,6 +1,6 @@
 
 # Best Solution
-def twoSum(nums, target):
+def twoSum(nums: int, target: int) -> int:
     hashmap = {}
     for i in range(len(nums)):
         complement = target - nums[i]
