@@ -19,22 +19,21 @@ class Solution(object):
 
 # ----- Iteratively ----- #
 class Solution(object):
-    def rightSideView(self, root):
-        if not root:
-            return []
+  def rightSideView(self, root):
+    if not root:
+      return []
+    result = []
+    queue = collections.deque([root])
 
-        q = collections.deque([root])
-        res = []
-
-        while q:
-            levLength = len(q)
-
-            for i in range(levLength):
-                node = q.popleft()
-                if i == levLength - 1:
-                    res.append(node.val)
-                if node.left:
-                    q.append(node.left)
-                if node.right:
-                    q.append(node.right)
-        return res
+    while queue:
+      queueLen = len(queue)
+      rightNode = None
+      for _ in range(queueLen):
+        node = queue.popleft()
+        if node:
+          rightNode = node
+          queue.append(node.left)
+          queue.append(node.right)
+      if rightNode:
+        result.append(rightNode.val)
+    return result

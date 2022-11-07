@@ -20,6 +20,9 @@ class Solution(object):
 
         return root
 
+# Time: O(n) --> have to visit all nodes once
+# Space: O(n) --> recursive call stack
+
 # --------------- Iteratively --------------- #
 
 def invertTree(root):
@@ -31,3 +34,6 @@ def invertTree(root):
             queue.append(node.left) # add nodes to be evaulated
             queue.append(node.right) # add nodes to be evaulated
     return root
+
+# Time: O(n) --> have to visit all nodes once
+# Space: O(n) --> size of the stack which would contain all nodes

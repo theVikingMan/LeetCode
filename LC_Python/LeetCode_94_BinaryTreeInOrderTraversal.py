@@ -19,6 +19,9 @@ class Solution:
         dfs(root)
         return res
 
+# Time: O(n) --> have to visit all nodes once
+# Space: O(n) --> recursive call stack
+
 # ----------- Iterative ----------- #
 
 class Solution:
@@ -36,3 +39,6 @@ class Solution:
       node = stack.pop()
       res.append(node.val)
       root = node.right
+
+# Time: O(n) --> have to visit all nodes once
+# Space: O(n) --> stack

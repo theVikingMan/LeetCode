@@ -1,8 +1,8 @@
 
 def solution(nums, k):
   n = len(nums)
-
   startIdx, count = 0, 0 # start will point to beginning of a cycle, count is num elems rotated
+
   while count < n: # Need to rotate one full length of the arr
     currIdx, prevElem = startIdx, nums[startIdx] # curr calcs next idx and if we need to alter rotataion in even length arr
     while True:
